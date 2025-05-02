@@ -1,3 +1,5 @@
-export default function Home() {
-  return <section className=""></section>;
-}
+import { ComponentsContainer } from "@/components/components-container";
+
+const Home = () => <ComponentsContainer></ComponentsContainer>;
+
+export default Home;
