@@ -15,6 +15,12 @@
   --gap-l: 16px;
   --gap-xl: 24px;
   --gap-2xl: 32px;
+
+  --headline-1-size: 60px;
+  --headline-2-size: 50px;
+  --headline-3-size: 38px;
+  --headline-4-size: 22px;
+  --paragraph-size: 24px;
 }
 
 @theme inline {
@@ -32,4 +38,10 @@
   --spacing-gap-l: var(--spacing-l);
   --spacing-gap-xl: var(--spacing-xl);
   --spacing-gap-2xl: var(--spacing-2xl);
+
+  --text-headline-1-size: var(--headline-1-size);
+  --text-headline-2-size: var(--headline-2-size);
+  --text-headline-3-size: var(--headline-3-size);
+  --text-headline-4-size: var(--headline-4-size);
+  --text-paragraph-size: var(--paragraph-size);
 }
