@@ -5,8 +5,11 @@ import { LoginContent } from "./login-content";
 
 const Login = () => (
   <ComponentsContainer>
-    <LoginBanner />
-    <LoginContent />
+    <section className="flex size-full min-h-screen w-full max-w-(--breakpoint-2xl) items-center justify-center">
+      <LoginBanner />
+      <hr className="bg-light-grey hidden min-h-screen w-px md:block" />
+      <LoginContent />
+    </section>
   </ComponentsContainer>
 );
 
