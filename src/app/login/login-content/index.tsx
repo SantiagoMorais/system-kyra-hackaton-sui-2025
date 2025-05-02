@@ -1,10 +1,11 @@
-import { loginListItem } from "@/styles";
-import { listContent } from "@/utils/login-content-list";
+import Image from "next/image";
+
+import { walletsListContent } from "@/utils/wallets-list-content";
 
 export const LoginContent = () => (
-  <section className="flex flex-col items-center gap-3 p-4">
-    <div className="bg-off-white/30 flex flex-col items-center gap-3 rounded-md p-4 md:bg-none">
-      <h2 className="font-redonda text-[40px] leading-13 font-normal text-orange-600">
+  <section className="flex flex-col items-center gap-3 p-6">
+    <div className="bg-off-white flex flex-col items-center gap-3 rounded-md p-6 md:bg-none">
+      <h2 className="font-redonda text-center text-[40px] leading-13 font-normal text-orange-600">
         Connect Wallet
       </h2>
       <p className="text-grey text-center leading-6">
@@ -18,13 +19,26 @@ export const LoginContent = () => (
         </a>
       </p>
       <ul className="w-full space-y-4">
-        {listContent.map((item) => (
-          <li key={item} className={loginListItem()}>
-            {item}
+        {walletsListContent.map((wallet) => (
+          <li
+            key={wallet.content}
+            className="flex items-center gap-2 border border-orange-600 px-3 py-5 uppercase"
+          >
+            {wallet.logo && (
+              <div className="relative size-6">
+                <Image
+                  fill
+                  src={wallet.logo}
+                  alt={wallet.content}
+                  className="object-contain"
+                />
+              </div>
+            )}
+            {wallet.content}
           </li>
         ))}
       </ul>
-      <button className="text-orange-600">Forget Password?</button>
+      <button className="text-action">Forget Password?</button>
     </div>
   </section>
 );
