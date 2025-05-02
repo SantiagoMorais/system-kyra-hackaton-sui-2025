@@ -16,11 +16,7 @@
   --gap-xl: 24px;
   --gap-2xl: 32px;
 
-  --headline-1-size: 60px;
-  --headline-2-size: 50px;
-  --headline-3-size: 38px;
-  --headline-4-size: 22px;
-  --paragraph-size: 24px;
+  --redonda: "Redonda", sans-serif;
 }
 
 @theme inline {
@@ -39,9 +35,47 @@
   --spacing-gap-xl: var(--spacing-xl);
   --spacing-gap-2xl: var(--spacing-2xl);
 
-  --text-headline-1-size: var(--headline-1-size);
-  --text-headline-2-size: var(--headline-2-size);
-  --text-headline-3-size: var(--headline-3-size);
-  --text-headline-4-size: var(--headline-4-size);
-  --text-paragraph-size: var(--paragraph-size);
+  --font-redonda: var(--redonda);
+}
+
+@font-face {
+  font-family: "Redonda";
+  src: url("/fonts/Redonda-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Redonda";
+  src: url("/fonts/Redonda-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Redonda";
+  src: url("/fonts/Redonda-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Redonda";
+  src: url("/fonts/Redonda-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Redonda";
+  src: url("/fonts/Redonda-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Redonda";
+  src: url("/fonts/Redonda-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
 }
