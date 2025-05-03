@@ -1,5 +1,11 @@
 import { ComponentsContainer } from "@/components/components-container";
 
-const Home = () => <ComponentsContainer></ComponentsContainer>;
+import { Navbar } from "./components/navbar";
+
+const Home = () => (
+  <ComponentsContainer className="h-dvh flex-row">
+    <Navbar />
+  </ComponentsContainer>
+);
 
 export default Home;
