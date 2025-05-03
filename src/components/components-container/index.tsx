@@ -8,7 +8,7 @@ export const ComponentsContainer = ({
 }: IComponentsContainerProps) => (
   <section
     className={twMerge(
-      "bg-black-grey flex min-h-dvh w-full items-center justify-center",
+      "bg-black-grey flex min-h-dvh w-dvw max-w-dvw items-center justify-center overflow-x-hidden",
       className
     )}
   >
