@@ -6,7 +6,7 @@ import { navbarIcons } from "@/utils/navbar-icons";
 
 export const Navbar = () => (
   <header className="w-full md:h-dvh md:min-h-dvh md:w-fit">
-    <nav className="border-light-grey/50 flex h-full gap-5 border-b p-5 md:flex-col md:border-r md:px-5 md:py-0 md:pt-25">
+    <nav className="border-light-grey/50 flex h-full items-center gap-5 border-b p-5 md:flex-col md:border-r md:px-5 md:py-0 md:pt-25">
       <span className="size-13 min-h-13 min-w-13 bg-orange-600" />
       <div className="bg-light-grey relative size-13 min-h-13 min-w-13">
         <Image
@@ -20,12 +20,12 @@ export const Navbar = () => (
         {navbarIcons.map(({ icon: Icon }, index) => (
           <li key={index}>
             <button className="group cursor-pointer">
-              <Icon className="text-light-grey opacity-40 duration-300 group-hover:opacity-100" />
+              <Icon className="text-light-grey/40 group-hover:text-light-grey/100 duration-300" />
             </button>
           </li>
         ))}
       </ul>
-      <ThemeTogglerButton />
+      <ThemeTogglerButton className="-mt-1.5" />
     </nav>
   </header>
 );
