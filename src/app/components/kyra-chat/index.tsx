@@ -1,5 +1,7 @@
 import { kyraChatCards } from "@/utils/kyra-chat-cards";
 
+import { TextArea } from "./text-area";
+
 export const KyraChat = () => (
   <main className="flex h-fit flex-1 items-center justify-center p-8 md:min-h-dvh">
     <section className="flex max-w-(--breakpoint-lg) flex-col">
@@ -10,7 +12,7 @@ export const KyraChat = () => (
       <h3 className="font-redonda text-grey mb-15 w-full text-xl">
         Use one of the most common prompts below or use or onw to begin
       </h3>
-      <ul className="flex w-full flex-col gap-4 md:flex-row">
+      <ul className="mb-5 flex w-full flex-col gap-4 md:flex-row">
         {kyraChatCards.map(({ text }, index) => (
           <li
             key={index}
@@ -20,6 +22,7 @@ export const KyraChat = () => (
           </li>
         ))}
       </ul>
+      <TextArea />
     </section>
   </main>
 );
