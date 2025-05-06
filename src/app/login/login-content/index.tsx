@@ -30,7 +30,7 @@ export const LoginContent = () => (
         {walletsListContent.map((wallet) => (
           <li
             key={wallet.content}
-            className="flex cursor-pointer items-center gap-2 border border-orange-600 px-3 py-5 text-white uppercase duration-300 hover:opacity-50"
+            className="text-secondary flex cursor-pointer items-center gap-2 border border-orange-600 px-3 py-5 uppercase duration-300 hover:opacity-50"
           >
             {wallet.logo && (
               <div className="relative size-6">

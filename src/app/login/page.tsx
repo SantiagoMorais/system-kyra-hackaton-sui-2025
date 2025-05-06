@@ -7,7 +7,7 @@ const Login = () => (
   <ComponentsContainer>
     <section className="flex size-full min-h-dvh w-full max-w-(--breakpoint-2xl) items-center justify-center">
       <LoginBanner />
-      <hr className="bg-grey hidden min-h-dvh w-px md:block" />
+      <hr className="bg-grey/50 hidden min-h-dvh w-px md:block" />
       <LoginContent />
     </section>
   </ComponentsContainer>

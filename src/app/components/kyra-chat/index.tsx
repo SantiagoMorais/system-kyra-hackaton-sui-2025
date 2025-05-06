@@ -14,7 +14,7 @@ export const KyraChat = () => (
         {kyraChatCards.map(({ text }, index) => (
           <li
             key={index}
-            className="border-grey flex-1 border px-2.5 py-4 pb-6 text-white md:pb-10"
+            className="border-grey text-secondary flex-1 border px-2.5 py-4 pb-6 md:pb-10"
           >
             <p>{text}</p>
           </li>
