@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import hexagonLogo from "@/assets/imgs/hexagon.png";
+import { ThemeTogglerButton } from "@/components/theme-toggler-button";
 import { navbarIcons } from "@/utils/navbar-icons";
 
 export const Navbar = () => (
@@ -24,6 +25,7 @@ export const Navbar = () => (
           </li>
         ))}
       </ul>
+      <ThemeTogglerButton />
     </nav>
   </header>
 );
