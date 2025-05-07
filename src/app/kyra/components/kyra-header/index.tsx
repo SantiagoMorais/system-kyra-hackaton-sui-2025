@@ -6,8 +6,8 @@ import { useEffect } from "react";
 
 import { routes } from "@/utils/routes";
 
-import { KyraSearchInput } from "../kyra-search-input";
 import { KyraNavbar } from "./kyra-navbar";
+import { KyraSearchInput } from "./kyra-search-input";
 
 export const KyraHeader = () => {
   const { status } = useWallet();
