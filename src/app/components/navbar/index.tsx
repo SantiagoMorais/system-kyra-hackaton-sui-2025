@@ -4,11 +4,14 @@ import hexagonLogo from "@/assets/imgs/hexagon.png";
 import { ThemeTogglerButton } from "@/components/theme-toggler-button";
 import { navbarIcons } from "@/utils/navbar-icons";
 
+import { ConnectButton } from "../connect-button";
+
 export const Navbar = () => (
-  <header className="w-full md:h-dvh md:min-h-dvh md:w-fit">
-    <nav className="border-light-grey/50 flex h-full items-center gap-5 border-b p-5 md:flex-col md:border-r md:px-5 md:py-0 md:pt-25">
-      <span className="size-13 min-h-13 min-w-13 bg-orange-600" />
-      <div className="bg-light-grey relative size-13 min-h-13 min-w-13">
+  <header className="border-light-grey/50 flex w-full flex-row-reverse items-center gap-5 border-b p-5 md:h-dvh md:min-h-dvh md:w-fit md:space-y-0 md:border-r md:px-5 md:py-0 md:pt-25">
+    <ConnectButton className="static w-fit md:hidden" />
+    <nav className="flex h-full items-center gap-5 md:flex-col">
+      <span className="hidden size-13 min-h-13 min-w-13 bg-orange-600 md:block" />
+      <div className="bg-light-grey relative hidden size-13 min-h-13 min-w-13 md:block">
         <Image
           src={hexagonLogo}
           alt="hexagon logo"
@@ -16,16 +19,16 @@ export const Navbar = () => (
           className="object-cover p-2.5"
         />
       </div>
-      <ul className="flex w-full items-center gap-3.5 md:flex-col">
+      <ul className="flex items-center gap-3.5 md:w-full md:flex-col">
         {navbarIcons.map(({ icon: Icon }, index) => (
-          <li key={index}>
-            <button className="group cursor-pointer">
-              <Icon className="text-light-grey/40 group-hover:text-light-grey/100 duration-300" />
+          <li key={index} className="size-6 h-fit max-h-6">
+            <button className="group size-6 cursor-pointer">
+              <Icon className="text-light-grey/40 group-hover:text-light-grey/100 size-6 duration-300" />
             </button>
           </li>
         ))}
       </ul>
-      <ThemeTogglerButton className="-mt-1.5" />
+      <ThemeTogglerButton className="-ml-1.5 md:-mt-1.5" />
     </nav>
   </header>
 );

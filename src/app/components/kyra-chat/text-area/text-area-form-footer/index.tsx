@@ -29,7 +29,7 @@ export const TextAreaFormFooter = ({
               className="font-redonda text-secondary flex cursor-pointer items-center gap-1 text-xs duration-300 hover:opacity-60"
             >
               <Icon className="size-5" />
-              {text}
+              <p className="hidden md:block">{text}</p>
             </button>
           </li>
         ))}
