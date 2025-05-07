@@ -102,3 +102,7 @@
   font-weight: 900;
   font-style: normal;
 }
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
