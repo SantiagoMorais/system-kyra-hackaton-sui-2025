@@ -1,20 +1,25 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useWallet } from "@suiet/wallet-kit";
+import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 import { kyraTextAreaSchema, TKyraTextArea } from "@/core/types/kyra-text-area";
 import { scrollBar } from "@/styles";
+import { routes } from "@/utils/routes";
 
 import { TextAreaFormFooter } from "./text-area-form-footer";
 
 export const TextArea = () => {
+  const { status } = useWallet();
   const { register, handleSubmit, watch, reset } = useForm<TKyraTextArea>({
     resolver: zodResolver(kyraTextAreaSchema),
     defaultValues: { message: "" },
   });
 
   const onSubmit = (data: TKyraTextArea) => {
+    if (status === "disconnected") redirect(routes.login);
     console.log(data);
     reset();
   };

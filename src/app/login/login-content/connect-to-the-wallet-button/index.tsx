@@ -4,11 +4,15 @@ import { useWallet } from "@suiet/wallet-kit";
 import { redirect } from "next/navigation";
 import { useLayoutEffect } from "react";
 
+import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
+import { routes } from "@/utils/routes";
+
 export const ConnectToTheWalletButton = () => {
   const { status } = useWallet();
+  const { isThemeLight } = useThemeToggler();
 
   useLayoutEffect(() => {
-    if (status === "connected") redirect("/");
+    if (status === "connected") redirect(routes.kyra);
   }, [status]);
 
   return (
@@ -27,9 +31,10 @@ export const ConnectToTheWalletButton = () => {
           fontFamily: "'IBM Plex Mono', monospace",
           fontWeight: "400",
           fontSize: "16px",
+          color: `${isThemeLight ? "black" : "white"}`,
         }}
         label="Connect to your wallet"
-        onConnectSuccess={() => redirect("/")}
+        onConnectSuccess={() => redirect(routes.kyra)}
       />
     </section>
   );
