@@ -6,6 +6,7 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { ReactNode } from "react";
 
 import { SuietWalletProvider } from "@/components/suiet-wallet-provider";
+import { PanelNavigatorProvider } from "@/contexts/panel-navigator-context/provider";
 import { ThemeTogglerProvider } from "@/contexts/theme-toggler-context/provider";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -27,7 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${ibmPlexMono.className} antialiased`}>
         <ThemeTogglerProvider>
-          <SuietWalletProvider>{children}</SuietWalletProvider>
+          <SuietWalletProvider>
+            <PanelNavigatorProvider>{children}</PanelNavigatorProvider>
+          </SuietWalletProvider>
         </ThemeTogglerProvider>
       </body>
     </html>
