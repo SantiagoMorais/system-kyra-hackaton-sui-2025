@@ -25,7 +25,7 @@ export const TextAreaForm = () => {
         {...register("message")}
         className={scrollBar({
           className:
-            "text-secondary placeholder:text-secondary font-redonda h-30 w-full resize-none outline-0 placeholder:opacity-100",
+            "text-secondary placeholder:text-secondary/60 font-redonda h-30 w-full resize-none outline-0 placeholder:opacity-100",
         })}
         placeholder="Ask whatever you need"
       />

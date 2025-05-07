@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-import { walletsListContent } from "@/utils/wallets-list-content";
+import { ConnectToTheWalletButton } from "./connect-to-the-wallet-button";
 
 export const LoginContent = () => (
   <section className="z-10 flex flex-col items-center gap-3 p-6 md:flex-1 md:px-10">
@@ -26,26 +24,7 @@ export const LoginContent = () => (
           Privacy Policy.
         </a>
       </p>
-      <ul className="w-full space-y-4">
-        {walletsListContent.map((wallet) => (
-          <li
-            key={wallet.content}
-            className="text-secondary flex cursor-pointer items-center gap-2 border border-orange-600 px-3 py-5 uppercase duration-300 hover:opacity-50"
-          >
-            {wallet.logo && (
-              <div className="relative size-6">
-                <Image
-                  fill
-                  src={wallet.logo}
-                  alt={wallet.content}
-                  className="object-contain"
-                />
-              </div>
-            )}
-            {wallet.content}
-          </li>
-        ))}
-      </ul>
+      <ConnectToTheWalletButton />
     </div>
   </section>
 );
