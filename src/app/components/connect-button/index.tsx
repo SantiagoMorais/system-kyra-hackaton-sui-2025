@@ -4,7 +4,7 @@ import { useWallet } from "@suiet/wallet-kit";
 import { Info } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
 import { routes } from "@/utils/routes";
@@ -12,7 +12,7 @@ import { routes } from "@/utils/routes";
 export const ConnectButton = ({ className }: { className?: string }) => {
   const { status } = useWallet();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (status === "connected") redirect(routes.kyra);
   }, [status]);
 

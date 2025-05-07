@@ -2,7 +2,7 @@
 import { ConnectButton } from "@suiet/wallet-kit";
 import { useWallet } from "@suiet/wallet-kit";
 import { redirect } from "next/navigation";
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
 import { routes } from "@/utils/routes";
@@ -11,7 +11,7 @@ export const ConnectToTheWalletButton = () => {
   const { status } = useWallet();
   const { isThemeLight } = useThemeToggler();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (status === "connected") redirect(routes.kyra);
   }, [status]);
 

@@ -2,7 +2,7 @@
 
 import { useWallet } from "@suiet/wallet-kit";
 import { redirect } from "next/navigation";
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 import { routes } from "@/utils/routes";
 
@@ -12,7 +12,7 @@ import { KyraNavbar } from "./kyra-navbar";
 export const KyraHeader = () => {
   const { status } = useWallet();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (status === "disconnected") redirect(routes.login);
   }, [status]);
 
