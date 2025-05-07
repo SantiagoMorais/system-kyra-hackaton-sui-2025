@@ -1,5 +1,11 @@
 import { ComponentsContainer } from "@/components/components-container";
 
-const Kyra = () => <ComponentsContainer></ComponentsContainer>;
+import { KyraHeader } from "./components/kyra-header";
+
+const Kyra = () => (
+  <ComponentsContainer>
+    <KyraHeader />
+  </ComponentsContainer>
+);
 
 export default Kyra;
