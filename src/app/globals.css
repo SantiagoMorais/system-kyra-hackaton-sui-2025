@@ -106,3 +106,9 @@
 .ReactCollapse--collapse {
   transition: height 500ms;
 }
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}
