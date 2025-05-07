@@ -1,8 +1,11 @@
+import "@suiet/wallet-kit/style.css";
 import "./globals.css";
 
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
+import { ReactNode } from "react";
 
+import { SuietWalletProvider } from "@/components/suiet-wallet-provider";
 import { ThemeTogglerProvider } from "@/contexts/theme-toggler-context/provider";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -18,12 +21,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`${ibmPlexMono.className} antialiased`}>
-        <ThemeTogglerProvider>{children}</ThemeTogglerProvider>
+        <ThemeTogglerProvider>
+          <SuietWalletProvider>{children}</SuietWalletProvider>
+        </ThemeTogglerProvider>
       </body>
     </html>
   );
