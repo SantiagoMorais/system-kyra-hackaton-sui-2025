@@ -1,9 +1,6 @@
 import { X } from "lucide-react";
 
-export interface IDisconnectCardProps {
-  setRenderDisconnectCard: React.Dispatch<React.SetStateAction<boolean>>;
-  disconnect: () => Promise<void>;
-}
+import { IDisconnectCardProps } from "@/core/interfaces/disconnect-card-props";
 
 export const DisconnectCard = ({
   disconnect,
