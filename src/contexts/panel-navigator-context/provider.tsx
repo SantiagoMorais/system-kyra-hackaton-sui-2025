@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 
+import { panelNavigations } from "@/utils/panel-navigations";
+
 import { PanelNavigatorContext } from "./context";
 
 export const PanelNavigatorProvider = ({
@@ -15,7 +17,9 @@ export const PanelNavigatorProvider = ({
   };
 
   return (
-    <PanelNavigatorContext.Provider value={{ panel, handlePanel }}>
+    <PanelNavigatorContext.Provider
+      value={{ panel, handlePanel, navigations: panelNavigations }}
+    >
       {children}
     </PanelNavigatorContext.Provider>
   );
