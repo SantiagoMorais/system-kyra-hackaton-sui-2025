@@ -6,8 +6,8 @@ import { useState } from "react";
 import { IPanelNavigations } from "@/contexts/panel-navigator-context/interfaces";
 import { ICursorPosition } from "@/core/interfaces/panel-navigator-navbar-props";
 
-import { Cursor } from "./cursor";
-import { PanelNavigationItem } from "./panel-navigation-item";
+import { Cursor } from "./panel-navigation-list/cursor";
+import { PanelNavigationItem } from "./panel-navigation-list/panel-navigation-item";
 
 export const PanelNavbar = ({
   navigations,

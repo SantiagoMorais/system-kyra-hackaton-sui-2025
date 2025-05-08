@@ -1,7 +1,7 @@
 import { kyraWalletFooterButtons } from "@/utils/kyra-wallet-footer-buttons";
 
 export const KyraWalletFooterButtons = () => (
-  <ul className="flex items-center justify-between pb-2">
+  <ul className="mt-auto flex items-center justify-between pb-2">
     {kyraWalletFooterButtons.map((Icon, index) => (
       <li
         key={index}

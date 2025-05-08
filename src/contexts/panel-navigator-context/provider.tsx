@@ -4,6 +4,7 @@ import { useState } from "react";
 import { panelNavigations } from "@/utils/panel-navigations";
 
 import { PanelNavigatorContext } from "./context";
+import { PanelOptions } from "./interfaces";
 
 export const PanelNavigatorProvider = ({
   children,
@@ -13,7 +14,7 @@ export const PanelNavigatorProvider = ({
   );
   const [panelOpenned, setPanelOpenned] = useState<boolean>(false);
 
-  const handlePanel = (panel: "wallet" | "discover" | "calendar") => {
+  const handlePanel = (panel: PanelOptions) => {
     setPanel(panel);
   };
 

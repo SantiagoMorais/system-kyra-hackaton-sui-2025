@@ -8,15 +8,19 @@ import { KyraDiscoverContent } from "./kyra-discover-content";
 import { KyraWalletContent } from "./kyra-wallet-content";
 import { PanelNavbar } from "./panel-navbar";
 
+export const kyraPanelContent = ({
+  panel,
+}: {
+  panel: "wallet" | "calendar" | "discover";
+}) => {
+  if (panel === "wallet") return <KyraWalletContent />;
+  if (panel === "calendar") return <></>;
+  if (panel === "discover") return <KyraDiscoverContent />;
+};
+
 export const PanelNavigator = () => {
   const { panel, navigations, panelOpenned, handleOpenPanel } =
     usePanelNavigator();
-
-  const content = () => {
-    if (panel === "wallet") return <KyraWalletContent />;
-    if (panel === "calendar") return <></>;
-    if (panel === "discover") return <KyraDiscoverContent />;
-  };
 
   useEffect(() => {
     if (panelOpenned) document.body.classList.add("overflow-hidden");
@@ -38,7 +42,7 @@ export const PanelNavigator = () => {
           handleOpenPanel={handleOpenPanel}
           navigations={navigations}
         />
-        {content()}
+        {kyraPanelContent({ panel })}
       </aside>
     </>
   );

@@ -1,7 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
 export interface IPanelNavigatorContext {
-  handlePanel: (panel: "wallet" | "discover" | "calendar") => void;
+  handlePanel: (panel: PanelOptions) => void;
   panel: "wallet" | "discover" | "calendar";
   navigations: Array<IPanelNavigations>;
   handleOpenPanel: (open?: boolean) => void;
@@ -10,5 +10,11 @@ export interface IPanelNavigatorContext {
 
 export interface IPanelNavigations {
   icon: LucideIcon;
-  text: "wallet" | "discover" | "calendar";
+  text: PanelOptions;
+}
+
+export enum PanelOptions {
+  Wallet = "wallet",
+  Discover = "discover",
+  Calendar = "calendar",
 }
