@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { DisconnectCard } from "./disconnect-card";
 import { NavigationContent } from "./navigation-content";
-import { PanelNavigator } from "./panel-navigator";
+import { PanelSheet } from "./panel-sheet";
 
 export const KyraNavbar = () => {
   const [renderDisconnectCard, setRenderDisconnectCard] =
@@ -13,13 +13,11 @@ export const KyraNavbar = () => {
 
   return (
     <nav className="relative flex w-full items-center justify-between md:w-fit md:justify-end">
-      <PanelNavigator />
-
+      <PanelSheet />
       <NavigationContent
         name={name}
         setRenderDisconnectCard={setRenderDisconnectCard}
       />
-
       {renderDisconnectCard && (
         <DisconnectCard
           disconnect={disconnect}

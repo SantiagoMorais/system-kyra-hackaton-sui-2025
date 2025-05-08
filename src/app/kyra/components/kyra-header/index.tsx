@@ -20,7 +20,6 @@ export const KyraHeader = () => {
     <header className="border-grey/50 flex w-full justify-center border-b p-4">
       <section className="flex w-full max-w-(--breakpoint-2xl) flex-col items-end gap-4 md:flex-row-reverse md:justify-between">
         <KyraNavbar />
-
         <KyraSearchInput />
       </section>
     </header>

@@ -4,7 +4,7 @@ export interface IPanelNavigatorContext {
   handlePanel: (panel: "wallet" | "discover" | "calendar") => void;
   panel: "wallet" | "discover" | "calendar";
   navigations: Array<IPanelNavigations>;
-  handleOpenPanel: () => void;
+  handleOpenPanel: (open?: boolean) => void;
   panelOpenned: boolean;
 }
 

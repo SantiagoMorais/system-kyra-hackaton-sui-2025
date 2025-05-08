@@ -5,7 +5,8 @@ import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
 import { PanelNavbar } from "./panel-navbar";
 
 export const PanelNavigator = () => {
-  const { panel, navigations } = usePanelNavigator();
+  const { panel, navigations, panelOpenned, handleOpenPanel } =
+    usePanelNavigator();
 
   const content = () => {
     if (panel === "wallet") return <></>;
@@ -14,11 +15,20 @@ export const PanelNavigator = () => {
   };
 
   return (
-    <section className="fixed top-0 right-0 flex h-dvh w-full justify-start bg-black/60 md:hidden">
-      <aside className="bg-black-grey w-10/12 p-4">
-        <PanelNavbar navigations={navigations} />
+    <>
+      <div
+        className={`fixed top-0 right-0 z-90 h-dvh w-dvw bg-black/60 ${!panelOpenned && "hidden"}`}
+        onClick={() => handleOpenPanel()}
+      />
+      <aside
+        className={`bg-black-grey fixed top-0 left-0 z-100 h-dvh w-10/12 origin-left p-4 duration-500 ${panelOpenned ? "w-10/12 opacity-100" : "w-0 -translate-x-full opacity-0"}`}
+      >
+        <PanelNavbar
+          handleOpenPanel={handleOpenPanel}
+          navigations={navigations}
+        />
         {content()}
       </aside>
-    </section>
+    </>
   );
 };

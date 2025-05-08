@@ -1,5 +1,6 @@
 "use client";
 
+import { X } from "lucide-react";
 import { useState } from "react";
 
 import { IPanelNavigations } from "@/contexts/panel-navigator-context/interfaces";
@@ -10,8 +11,10 @@ import { PanelItem } from "./panel-item";
 
 export const PanelNavbar = ({
   navigations,
+  handleOpenPanel,
 }: {
   navigations: Array<IPanelNavigations>;
+  handleOpenPanel: (panel?: boolean) => void;
 }) => {
   const [position, setPosition] = useState<ICursorPosition>({
     top: 0,
@@ -22,7 +25,13 @@ export const PanelNavbar = ({
   });
 
   return (
-    <nav>
+    <nav className="flex flex-col gap-2">
+      <button
+        onClick={() => handleOpenPanel()}
+        className="text-grey ml-auto duration-300 hover:opacity-70"
+      >
+        <X />
+      </button>
       <ul className="relative flex w-full gap-1.5">
         {navigations.map(({ icon, text }) => (
           <PanelItem

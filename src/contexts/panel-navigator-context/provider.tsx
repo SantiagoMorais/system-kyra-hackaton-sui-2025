@@ -17,8 +17,8 @@ export const PanelNavigatorProvider = ({
     setPanel(panel);
   };
 
-  const handleOpenPanel = () => {
-    setPanelOpenned((prev) => !prev);
+  const handleOpenPanel = (open?: boolean) => {
+    setPanelOpenned((prev) => (open ? open : !prev));
   };
 
   return (
