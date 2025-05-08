@@ -10,7 +10,7 @@ export const KyraChat = () => (
         What would you like to know?
       </h2>
       <h3 className="font-redonda text-grey mb-15 w-full text-xl">
-        Use one of the most common prompts below or use or onw to begin
+        Use one of the most common prompts below or use or own to begin
       </h3>
       <ul className="mb-5 flex w-full flex-col gap-4 md:flex-row">
         {kyraChatCards.map(({ text }, index) => (
