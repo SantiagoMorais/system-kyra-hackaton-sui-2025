@@ -19,7 +19,7 @@ export const Navbar = () => {
   }, [status]);
 
   return (
-    <header className="border-light-grey/50 flex w-full flex-row-reverse items-center gap-5 border-b p-5 lg:h-dvh lg:min-h-dvh lg:w-fit lg:space-y-0 lg:border-r lg:px-5 lg:py-0 lg:pt-25">
+    <header className="border-light-grey/50 flex w-full flex-row-reverse items-center gap-5 border-b p-5 lg:h-dvh lg:min-h-dvh lg:w-fit lg:flex-col lg:space-y-0 lg:border-r lg:px-5 lg:py-0 lg:pt-25">
       <ConnectButton className="static w-fit lg:hidden" />
       <nav className="flex h-full items-center gap-5 lg:flex-col">
         <span className="hidden size-13 min-h-13 min-w-13 bg-orange-600 lg:block" />
