@@ -9,7 +9,6 @@ export const KyraHome = () => (
     <KyraNavbar />
     <PanelNavigator />
     <DesktopPanel />
-    <div className="bg-grey/60 hidden min-h-full w-px lg:block" />
     <KyraChat />
   </main>
 );
