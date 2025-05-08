@@ -18,6 +18,8 @@ export const DesktopPanel = () => {
       <PanelNavigationList />
       <section
         className={scrollBar({
+          color: "darkGrey",
+          thickness: "thin",
           className: "h-full max-h-full overflow-x-hidden",
         })}
       >
