@@ -1,6 +1,6 @@
 "use client";
-import { WalletProvider } from "@suiet/wallet-kit";
+import { SuietWallet, WalletProvider } from "@suiet/wallet-kit";
 
 export const SuietWalletProvider = ({ children }: React.PropsWithChildren) => (
-  <WalletProvider>{children}</WalletProvider>
+  <WalletProvider defaultWallets={[SuietWallet]}>{children}</WalletProvider>
 );
