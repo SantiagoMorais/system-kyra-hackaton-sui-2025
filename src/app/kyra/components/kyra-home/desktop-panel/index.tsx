@@ -9,7 +9,7 @@ export const DesktopPanel = () => {
   const { panel } = usePanelNavigator();
 
   return (
-    <section className="border-grey hidden h-full w-100 flex-col gap-1 overflow-x-hidden px-7 py-8 lg:flex">
+    <section className="border-grey hidden h-dvh w-100 flex-col gap-1 overflow-x-hidden bg-black px-7 py-8 lg:flex">
       <PanelNavigationList />
       {kyraPanelContent({ panel })}
     </section>

@@ -5,7 +5,7 @@ import { KyraHome } from "./components/kyra-home";
 
 const Kyra = () => (
   <ComponentsContainer className="w-full flex-col overflow-hidden">
-    <KyraHeader />
+    {/* <KyraHeader /> */}
     <KyraHome />
   </ComponentsContainer>
 );

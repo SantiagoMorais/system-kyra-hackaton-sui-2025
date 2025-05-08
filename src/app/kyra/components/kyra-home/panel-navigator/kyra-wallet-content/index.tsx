@@ -1,10 +1,10 @@
 import { KyraTrendingTokens } from "./kyra-trending-tokens";
 import { KyraWalletFooterButtons } from "./kyra-wallet-footer-buttons";
-import { KyraWalletRevenue } from "./kyra-wallet-revenue";
+import { KyraWalletBalance } from "./kyra-wallet-revenue";
 
 export const KyraWalletContent = () => (
   <section className="flex h-full flex-col pb-4">
-    <KyraWalletRevenue />
+    <KyraWalletBalance />
     <hr className="border-grey/60 mb-6 -ml-4 w-screen" />
     <KyraTrendingTokens />
     <KyraWalletFooterButtons />
