@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
 
 import { KyraWalletContent } from "../kyra-wallet-content";
@@ -14,6 +16,13 @@ export const PanelNavigator = () => {
     if (panel === "calendar") return <></>;
     if (panel === "discover") return <></>;
   };
+
+  useEffect(() => {
+    if (panelOpenned) document.body.classList.add("overflow-hidden");
+    if (!panelOpenned) document.body.classList.remove("overflow-hidden");
+
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [panelOpenned]);
 
   return (
     <>
