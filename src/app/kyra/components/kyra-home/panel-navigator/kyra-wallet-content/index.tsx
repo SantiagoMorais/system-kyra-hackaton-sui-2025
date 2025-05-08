@@ -1,5 +1,4 @@
 import { KyraTrendingTokens } from "./kyra-trending-tokens";
-import { KyraWalletFooterButtons } from "./kyra-wallet-footer-buttons";
 import { KyraWalletBalance } from "./kyra-wallet-revenue";
 
 export const KyraWalletContent = () => (
@@ -7,6 +6,5 @@ export const KyraWalletContent = () => (
     <KyraWalletBalance />
     <hr className="border-grey/60 mb-6 -ml-4 w-screen" />
     <KyraTrendingTokens />
-    <KyraWalletFooterButtons />
   </section>
 );
