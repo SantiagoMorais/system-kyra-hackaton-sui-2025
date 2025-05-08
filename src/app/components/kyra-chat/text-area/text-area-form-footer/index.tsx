@@ -26,8 +26,9 @@ export const TextAreaFormFooter = ({
           <li key={text}>
             <button
               type="button"
-              className="font-redonda text-secondary flex cursor-pointer items-center gap-1 text-xs duration-300 hover:opacity-60"
+              className="font-redonda text-secondary group relative flex cursor-pointer items-center gap-1 text-xs duration-300"
             >
+              <span className="absolute -bottom-2.5 h-0.75 w-full origin-right scale-x-0 bg-orange-600 transition-transform duration-500 group-hover:origin-left group-hover:scale-x-100" />
               <Icon className="size-5" />
               <p className="hidden md:block">{text}</p>
             </button>
