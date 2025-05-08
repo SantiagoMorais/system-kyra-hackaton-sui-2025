@@ -4,8 +4,8 @@ import { useEffect } from "react";
 
 import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
 
-import { KyraDiscoverContent } from "../kyra-discover-content";
-import { KyraWalletContent } from "../kyra-wallet-content";
+import { KyraDiscoverContent } from "./kyra-discover-content";
+import { KyraWalletContent } from "./kyra-wallet-content";
 import { PanelNavbar } from "./panel-navbar";
 
 export const PanelNavigator = () => {
