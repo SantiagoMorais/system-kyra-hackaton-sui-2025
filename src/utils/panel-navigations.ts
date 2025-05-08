@@ -1,12 +1,15 @@
 import { Calendar, Search, Wallet } from "lucide-react";
 
-import { IPanelNavigations } from "@/contexts/panel-navigator-context/interfaces";
+import {
+  IPanelNavigations,
+  PanelOptions,
+} from "@/contexts/panel-navigator-context/interfaces";
 
 export const panelNavigations: Array<IPanelNavigations> = [
-  { icon: Wallet, text: "wallet" },
+  { icon: Wallet, text: PanelOptions.Wallet },
   {
     icon: Search,
-    text: "discover",
+    text: PanelOptions.Discover,
   },
-  { icon: Calendar, text: "calendar" },
+  { icon: Calendar, text: PanelOptions.Calendar },
 ];
