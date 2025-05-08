@@ -28,7 +28,7 @@ export const NavigationContent = ({
         </button>
       </div>
 
-      <div className="absolute top-full right-0 z-10">
+      <div className="absolute top-full right-10 z-90">
         <Collapse isOpened={accordionOpened}>
           <div className="bg-dark-grey border-black-grey flex w-fit flex-col gap-2 border p-3 pl-7">
             <button
