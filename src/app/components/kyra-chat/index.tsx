@@ -6,8 +6,8 @@ export const KyraChat = () => (
   <main className="flex h-fit flex-1 items-center justify-center p-8 md:min-h-dvh">
     <section className="flex max-w-(--breakpoint-lg) flex-col">
       <h2 className="font-redonda w-full bg-linear-to-r from-orange-600 to-orange-950 bg-clip-text text-3xl leading-tight text-transparent md:text-5xl">
-        Hi there, Kyra <br />
-        What would like you know?
+        Hi there, I{"'"}m Kyra <br />
+        What would you like to know?
       </h2>
       <h3 className="font-redonda text-grey mb-15 w-full text-xl">
         Use one of the most common prompts below or use or onw to begin
