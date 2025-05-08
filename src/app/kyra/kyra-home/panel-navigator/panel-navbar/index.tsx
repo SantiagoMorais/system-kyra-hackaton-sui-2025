@@ -24,7 +24,6 @@ export const PanelNavbar = ({
   return (
     <nav>
       <ul className="relative flex w-full gap-1.5">
-        <Cursor position={position} />
         {navigations.map(({ icon, text }) => (
           <PanelItem
             icon={icon}
@@ -33,6 +32,7 @@ export const PanelNavbar = ({
             setPosition={setPosition}
           />
         ))}
+        <Cursor position={position} className="z-20" />
       </ul>
     </nav>
   );

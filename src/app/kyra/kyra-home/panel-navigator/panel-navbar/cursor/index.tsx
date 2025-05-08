@@ -12,6 +12,6 @@ export const Cursor = ({
 }) => (
   <motion.li
     animate={position as TargetAndTransition}
-    className={twMerge("absolute z-10 bg-orange-600", className)}
+    className={twMerge("absolute bg-orange-600", className)}
   />
 );

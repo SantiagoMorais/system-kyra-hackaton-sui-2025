@@ -1,13 +1,10 @@
 import { useRef } from "react";
 
-import { IPanelNavigations } from "@/contexts/panel-navigator-context/interfaces";
-import { ICursorPosition } from "@/core/interfaces/panel-navigator-navbar-props";
+import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
+import { IPanelItemProps } from "@/core/interfaces/panel-item-props";
 
-interface IPanelItem extends IPanelNavigations {
-  setPosition: React.Dispatch<React.SetStateAction<ICursorPosition>>;
-}
-
-export const PanelItem = ({ icon: Icon, text, setPosition }: IPanelItem) => {
+export const PanelItem = ({ text, setPosition }: IPanelItemProps) => {
+  const { handlePanel } = usePanelNavigator();
   const ref = useRef<HTMLLIElement | null>(null);
   const handleOnMouseEnter = () => {
     if (!ref.current) return;
@@ -28,10 +25,14 @@ export const PanelItem = ({ icon: Icon, text, setPosition }: IPanelItem) => {
       ref={ref}
       onClick={handleOnMouseEnter}
       key={text}
-      className="relative z-10 flex-1"
+      className="relative flex-1"
     >
-      <button className="text-secondary relative z-20 flex w-full justify-center p-3 duration-300 hover:opacity-70">
-        <Icon />
+      <div className="bg-dark-grey absolute z-10 size-full" />
+      <button
+        onClick={() => handlePanel(text)}
+        className={`text-secondary relative z-30 flex w-full justify-center p-3 px-2 text-xs uppercase hover:opacity-70`}
+      >
+        {text}
       </button>
     </li>
   );

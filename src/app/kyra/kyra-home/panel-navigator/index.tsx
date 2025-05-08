@@ -14,7 +14,7 @@ export const PanelNavigator = () => {
   };
 
   return (
-    <section className="fixed top-0 right-0 flex h-dvh w-full justify-start bg-black/60">
+    <section className="fixed top-0 right-0 flex h-dvh w-full justify-start bg-black/60 md:hidden">
       <aside className="bg-black-grey w-10/12 p-4">
         <PanelNavbar navigations={navigations} />
         {content()}
