@@ -1,7 +1,7 @@
 import { ComponentsContainer } from "@/components/components-container";
 
 import { KyraHeader } from "./components/kyra-header";
-import { KyraHome } from "./kyra-home";
+import { KyraHome } from "./components/kyra-home";
 
 const Kyra = () => (
   <ComponentsContainer className="w-full flex-col overflow-hidden">
