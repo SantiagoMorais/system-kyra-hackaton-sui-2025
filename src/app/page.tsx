@@ -5,8 +5,8 @@ import { KyraChat } from "./components/kyra-chat";
 import { Navbar } from "./components/navbar";
 
 const Home = () => (
-  <ComponentsContainer className="min-h-dvh flex-col md:flex-row">
-    <ConnectButton className="hidden md:flex" />
+  <ComponentsContainer className="min-h-dvh flex-col lg:flex-row">
+    <ConnectButton className="hidden lg:flex" />
     <Navbar />
     <KyraChat />
   </ComponentsContainer>

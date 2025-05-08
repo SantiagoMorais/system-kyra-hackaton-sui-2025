@@ -9,7 +9,7 @@ export const PanelSheet = () => {
 
   return (
     <button
-      className="text-grey duration-300 hover:opacity-70 md:hidden"
+      className="text-grey duration-300 hover:opacity-70 lg:hidden"
       onClick={() => handleOpenPanel(true)}
     >
       <Menu />

@@ -6,13 +6,13 @@ export const KyraSearchInput = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <div className="flex w-full flex-1 justify-end md:justify-start">
+    <div className="flex w-full flex-1 justify-end lg:justify-start">
       <input
         type="text"
         name="search"
         id="search"
         placeholder="Search"
-        className="bg-dark-grey text-secondary placeholder:text-secondary/40 font-redonda w-full border border-r-0 border-transparent px-4 py-2.5 text-xs duration-300 outline-none focus:border-blue-500 md:max-w-150"
+        className="bg-dark-grey text-secondary placeholder:text-secondary/40 font-redonda w-full border border-r-0 border-transparent px-4 py-2.5 text-xs duration-300 outline-none focus:border-blue-500 lg:max-w-150"
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />

@@ -19,11 +19,11 @@ export const Navbar = () => {
   }, [status]);
 
   return (
-    <header className="border-light-grey/50 flex w-full flex-row-reverse items-center gap-5 border-b p-5 md:h-dvh md:min-h-dvh md:w-fit md:space-y-0 md:border-r md:px-5 md:py-0 md:pt-25">
-      <ConnectButton className="static w-fit md:hidden" />
-      <nav className="flex h-full items-center gap-5 md:flex-col">
-        <span className="hidden size-13 min-h-13 min-w-13 bg-orange-600 md:block" />
-        <div className="bg-light-grey relative hidden size-13 min-h-13 min-w-13 md:block">
+    <header className="border-light-grey/50 flex w-full flex-row-reverse items-center gap-5 border-b p-5 lg:h-dvh lg:min-h-dvh lg:w-fit lg:space-y-0 lg:border-r lg:px-5 lg:py-0 lg:pt-25">
+      <ConnectButton className="static w-fit lg:hidden" />
+      <nav className="flex h-full items-center gap-5 lg:flex-col">
+        <span className="hidden size-13 min-h-13 min-w-13 bg-orange-600 lg:block" />
+        <div className="bg-light-grey relative hidden size-13 min-h-13 min-w-13 lg:block">
           <Image
             src={hexagonLogo}
             alt="hexagon logo"
@@ -31,7 +31,7 @@ export const Navbar = () => {
             className="object-cover p-2.5"
           />
         </div>
-        <ul className="flex items-center gap-3.5 md:w-full md:flex-col">
+        <ul className="flex items-center gap-3.5 lg:w-full lg:flex-col">
           {navbarIcons.map(({ icon: Icon }, index) => (
             <li key={index} className="size-6 h-fit max-h-6">
               <button className="group size-6 cursor-pointer">
@@ -40,7 +40,7 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        <ThemeTogglerButton className="-ml-1.5 md:-mt-1.5" />
+        <ThemeTogglerButton className="-ml-1.5 lg:-mt-1.5" />
       </nav>
     </header>
   );

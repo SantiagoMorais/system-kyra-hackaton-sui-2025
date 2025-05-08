@@ -12,7 +12,7 @@ export const KyraNavbar = () => {
   const { name, disconnect } = useWallet();
 
   return (
-    <nav className="relative flex w-full items-center justify-between md:w-fit md:justify-end">
+    <nav className="relative flex w-full items-center justify-between lg:w-fit lg:justify-end">
       <PanelSheet />
       <NavigationContent
         name={name}

@@ -30,7 +30,7 @@ export const TextAreaFormFooter = ({
             >
               <span className="absolute -bottom-2.5 h-0.75 w-full origin-right scale-x-0 bg-orange-600 transition-transform duration-500 group-hover:origin-left group-hover:scale-x-100" />
               <Icon className="size-5" />
-              <p className="hidden md:block">{text}</p>
+              <p className="hidden sm:block">{text}</p>
             </button>
           </li>
         ))}
