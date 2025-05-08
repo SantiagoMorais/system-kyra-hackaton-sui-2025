@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
 import { IPanelItemProps } from "@/core/interfaces/panel-item-props";
 
-export const PanelItem = ({ text, setPosition }: IPanelItemProps) => {
+export const PanelNavigationItem = ({ text, setPosition }: IPanelItemProps) => {
   const { handlePanel } = usePanelNavigator();
   const ref = useRef<HTMLLIElement | null>(null);
   const handleOnMouseEnter = () => {

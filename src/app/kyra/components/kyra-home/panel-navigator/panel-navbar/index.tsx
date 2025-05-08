@@ -7,7 +7,7 @@ import { IPanelNavigations } from "@/contexts/panel-navigator-context/interfaces
 import { ICursorPosition } from "@/core/interfaces/panel-navigator-navbar-props";
 
 import { Cursor } from "./cursor";
-import { PanelItem } from "./panel-item";
+import { PanelNavigationItem } from "./panel-navigation-item";
 
 export const PanelNavbar = ({
   navigations,
@@ -34,7 +34,7 @@ export const PanelNavbar = ({
       </button>
       <ul className="relative flex w-full gap-1.5">
         {navigations.map(({ icon, text }) => (
-          <PanelItem
+          <PanelNavigationItem
             icon={icon}
             text={text}
             key={text}
