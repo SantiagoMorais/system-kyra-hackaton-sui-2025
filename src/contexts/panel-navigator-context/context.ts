@@ -8,4 +8,6 @@ export const PanelNavigatorContext = createContext<IPanelNavigatorContext>({
   panel: "wallet",
   handlePanel: () => {},
   navigations: panelNavigations,
+  panelOpenned: false,
+  handleOpenPanel: () => {},
 });
