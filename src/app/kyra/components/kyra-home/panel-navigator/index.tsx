@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
 
+import { KyraDiscoverContent } from "../kyra-discover-content";
 import { KyraWalletContent } from "../kyra-wallet-content";
 import { PanelNavbar } from "./panel-navbar";
 
@@ -14,7 +15,7 @@ export const PanelNavigator = () => {
   const content = () => {
     if (panel === "wallet") return <KyraWalletContent />;
     if (panel === "calendar") return <></>;
-    if (panel === "discover") return <></>;
+    if (panel === "discover") return <KyraDiscoverContent />;
   };
 
   useEffect(() => {
