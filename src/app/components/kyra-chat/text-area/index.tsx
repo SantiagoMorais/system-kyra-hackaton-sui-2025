@@ -40,6 +40,7 @@ export const TextArea = ({
         <textarea
           {...register("message")}
           className={scrollBar({
+            color: "orange",
             className:
               "text-secondary placeholder:text-secondary/60 font-redonda h-30 w-full resize-none outline-0 placeholder:opacity-100",
           })}
