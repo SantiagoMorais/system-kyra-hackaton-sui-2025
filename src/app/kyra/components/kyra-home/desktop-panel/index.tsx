@@ -21,15 +21,15 @@ export const DesktopPanel = () => {
 
   return (
     <section
-      className={`border-grey hidden h-dvh flex-col overflow-x-hidden py-8 duration-500 lg:flex ${isThemeLight ? "bg-grey/10" : "bg-black/20"} ${panelIsOpen ? "w-100 px-7" : "w-15 p-2"}`}
+      className={`border-grey hidden h-dvh flex-col overflow-x-hidden py-8 duration-500 lg:flex ${isThemeLight ? "bg-grey/10" : "bg-black/20"} ${panelIsOpen ? "w-100 px-7" : "w-9 px-1"}`}
     >
       <button
         onClick={handleOpenPanel}
         title="Close Panel"
-        className="text-grey hover:text-secondary hover:bg-dark-grey mb-2 w-fit rounded-md p-2 duration-300"
+        className="text-grey hover:text-secondary hover:bg-dark-grey mb-2 w-fit rounded-md p-1 duration-300"
       >
         <PanelLeftClose
-          className={`duration-500 ${panelIsOpen && "rotate-180"}`}
+          className={`size-5 duration-500 ${panelIsOpen && "rotate-180"}`}
         />
       </button>
       <PanelNavigationList
