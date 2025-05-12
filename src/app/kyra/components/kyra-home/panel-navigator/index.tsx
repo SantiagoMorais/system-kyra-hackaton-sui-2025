@@ -3,20 +3,10 @@
 import { useEffect } from "react";
 
 import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
+import { scrollBar } from "@/styles";
 
-import { KyraDiscoverContent } from "./kyra-discover-content";
-import { KyraWalletContent } from "./kyra-wallet-content";
+import { KyraPanelContent } from "./kyra-panel-content";
 import { PanelNavbar } from "./panel-navbar";
-
-export const kyraPanelContent = ({
-  panel,
-}: {
-  panel: "wallet" | "calendar" | "discover";
-}) => {
-  if (panel === "wallet") return <KyraWalletContent />;
-  if (panel === "calendar") return <></>;
-  if (panel === "discover") return <KyraDiscoverContent />;
-};
 
 export const PanelNavigator = () => {
   const { panel, navigations, panelOpened, handleOpenPanel } =
@@ -42,7 +32,15 @@ export const PanelNavigator = () => {
           handleOpenPanel={handleOpenPanel}
           navigations={navigations}
         />
-        {kyraPanelContent({ panel })}
+        <section
+          className={scrollBar({
+            color: "darkGrey",
+            thickness: "thin",
+            className: "h-full max-h-full overflow-x-hidden duration-500",
+          })}
+        >
+          <KyraPanelContent panel={panel} />
+        </section>
       </aside>
     </>
   );

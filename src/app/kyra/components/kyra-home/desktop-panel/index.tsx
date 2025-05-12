@@ -7,7 +7,7 @@ import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
 import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
 import { scrollBar } from "@/styles";
 
-import { kyraPanelContent } from "../panel-navigator";
+import { KyraPanelContent } from "../panel-navigator/kyra-panel-content";
 import { PanelNavigationList } from "../panel-navigator/panel-navbar/panel-navigation-list";
 
 export const DesktopPanel = () => {
@@ -21,7 +21,7 @@ export const DesktopPanel = () => {
 
   return (
     <section
-      className={`border-grey hidden h-dvh flex-col overflow-x-hidden py-8 duration-500 lg:flex ${isThemeLight ? "bg-grey/10" : "bg-black/20"} ${panelIsOpen ? "w-100 px-7" : "w-9 px-1"}`}
+      className={`border-grey hidden h-dvh flex-col overflow-x-hidden pt-8 pb-4 duration-500 lg:flex ${isThemeLight ? "bg-grey/10" : "bg-black/20"} ${panelIsOpen ? "w-100 px-7" : "w-9 px-1"}`}
     >
       <button
         onClick={handleOpenPanel}
@@ -43,7 +43,7 @@ export const DesktopPanel = () => {
           className: `my-8 h-full max-h-full overflow-x-hidden duration-500 ${panelIsOpen ? "opacity-100" : "overflow-y-hidden opacity-0"}`,
         })}
       >
-        {kyraPanelContent({ panel })}
+        <KyraPanelContent panel={panel} />
       </section>
     </section>
   );
