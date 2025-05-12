@@ -1,5 +1,8 @@
 "use client";
 
+import { PanelLeftClose } from "lucide-react";
+import { useState } from "react";
+
 import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
 import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
 import { scrollBar } from "@/styles";
@@ -10,17 +13,34 @@ import { PanelNavigationList } from "../panel-navigator/panel-navbar/panel-navig
 export const DesktopPanel = () => {
   const { panel } = usePanelNavigator();
   const { isThemeLight } = useThemeToggler();
+  const [panelIsOpen, setPanelIsOpen] = useState<boolean>(true);
+
+  const handleOpenPanel = () => {
+    setPanelIsOpen((prev) => !prev);
+  };
 
   return (
     <section
-      className={`border-grey hidden h-dvh w-100 flex-col gap-8 overflow-x-hidden px-7 py-8 lg:flex ${isThemeLight ? "bg-grey/10" : "bg-black/20"}`}
+      className={`border-grey hidden h-dvh flex-col overflow-x-hidden py-8 duration-500 lg:flex ${isThemeLight ? "bg-grey/10" : "bg-black/20"} ${panelIsOpen ? "w-100 px-7" : "w-15 p-2"}`}
     >
-      <PanelNavigationList />
+      <button
+        onClick={handleOpenPanel}
+        title="Close Panel"
+        className="text-grey hover:text-secondary hover:bg-dark-grey mb-2 w-fit rounded-md p-2 duration-300"
+      >
+        <PanelLeftClose
+          className={`duration-500 ${panelIsOpen && "rotate-180"}`}
+        />
+      </button>
+      <PanelNavigationList
+        classList={`${panelIsOpen ? "opacity-100" : "opacity-0 duration-500"}`}
+      />
+
       <section
         className={scrollBar({
           color: "darkGrey",
           thickness: "thin",
-          className: "h-full max-h-full overflow-x-hidden",
+          className: `my-8 h-full max-h-full overflow-x-hidden duration-500 ${panelIsOpen ? "opacity-100" : "overflow-y-hidden opacity-0"}`,
         })}
       >
         {kyraPanelContent({ panel })}
