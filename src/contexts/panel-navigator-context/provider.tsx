@@ -12,7 +12,7 @@ export const PanelNavigatorProvider = ({
   const [panel, setPanel] = useState<"wallet" | "discover" | "calendar">(
     "wallet"
   );
-  const [panelOpenned, setPanelOpenned] = useState<boolean>(false);
+  const [panelOpened, setPanelOpenned] = useState<boolean>(false);
 
   const handlePanel = (panel: PanelOptions) => {
     setPanel(panel);
@@ -28,7 +28,7 @@ export const PanelNavigatorProvider = ({
         panel,
         handlePanel,
         navigations: panelNavigations,
-        panelOpenned,
+        panelOpened,
         handleOpenPanel,
       }}
     >
