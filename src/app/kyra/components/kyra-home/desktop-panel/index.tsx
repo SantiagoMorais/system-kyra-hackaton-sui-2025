@@ -40,7 +40,7 @@ export const DesktopPanel = () => {
         className={scrollBar({
           color: "darkGrey",
           thickness: "thin",
-          className: `my-8 h-full max-h-full overflow-x-hidden duration-500 ${panelIsOpen ? "opacity-100" : "overflow-y-hidden opacity-0"}`,
+          className: `my-2 h-full max-h-full overflow-x-hidden duration-500 ${panelIsOpen ? "opacity-100" : "overflow-y-hidden opacity-0"}`,
         })}
       >
         <KyraPanelContent panel={panel} />
