@@ -13,7 +13,7 @@ export const KyraHeader = () => {
   const { status } = useWallet();
 
   useEffect(() => {
-    if (status === "disconnected") redirect(routes.login);
+    if (status === "disconnected") redirect(routes.home);
   }, [status]);
 
   return (
