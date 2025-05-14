@@ -14,6 +14,7 @@ export const DisconnectCard = ({
       <button
         className="group absolute top-2 right-2 border border-transparent p-1 duration-300 hover:border-orange-600"
         onClick={() => setRenderDisconnectCard(false)}
+        title="Close"
       >
         <X className="text-grey size-6 duration-300 group-hover:text-orange-600" />
       </button>

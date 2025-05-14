@@ -29,6 +29,7 @@ export const PanelNavbar = ({
       <button
         onClick={() => handleOpenPanel()}
         className="text-grey ml-auto duration-300 hover:opacity-70"
+        title="Close Panel"
       >
         <X />
       </button>

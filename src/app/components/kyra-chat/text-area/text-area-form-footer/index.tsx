@@ -27,6 +27,7 @@ export const TextAreaFormFooter = ({
             <button
               type="button"
               className="font-redonda text-secondary group relative flex cursor-pointer items-center gap-1 text-xs duration-300"
+              title={text}
             >
               <span className="absolute -bottom-2.5 h-0.75 w-full origin-right scale-x-0 bg-orange-600 transition-transform duration-500 group-hover:origin-left group-hover:scale-x-100" />
               <Icon className="size-5" />
@@ -45,6 +46,7 @@ export const TextAreaFormFooter = ({
       <button
         type="submit"
         className="group flex size-10 cursor-pointer items-center justify-center rounded-full bg-orange-600 p-1.5"
+        title="Send"
       >
         <ArrowRight className="text-white duration-200 group-hover:scale-125" />
       </button>

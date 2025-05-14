@@ -68,12 +68,14 @@ export const KyraWalletBalance = () => {
 
       <ul className="border-grey/60 flex justify-center gap-4 border-t pt-2.5">
         {walletWindows.map(({ content, icon: Icon }) => (
-          <li
-            key={content}
-            className={`hover:bg-black-grey cursor-pointer rounded-lg p-3 duration-300 ${selected === content && "bg-black-grey"}`}
-            onClick={() => setSelected(content)}
-          >
-            <Icon className="text-secondary/70" />
+          <li key={content}>
+            <button
+              onClick={() => setSelected(content)}
+              className={`hover:bg-black-grey cursor-pointer rounded-lg p-3 duration-300 ${selected === content && "bg-black-grey"}`}
+              title={content}
+            >
+              <Icon className="text-secondary/70" />
+            </button>
           </li>
         ))}
       </ul>

@@ -1,6 +1,6 @@
 import { DotSquare, Home, LucideIcon, X } from "lucide-react";
 
-export type WalletContent = "1" | "2" | "3";
+export type WalletContent = "Balance" | "Swap" | "History";
 
 export const walletWindows: Array<{
   icon: LucideIcon;
@@ -8,8 +8,8 @@ export const walletWindows: Array<{
 }> = [
   {
     icon: Home,
-    content: "1",
+    content: "Balance",
   },
-  { icon: X, content: "2" },
-  { icon: DotSquare, content: "3" },
+  { icon: X, content: "Swap" },
+  { icon: DotSquare, content: "History" },
 ];

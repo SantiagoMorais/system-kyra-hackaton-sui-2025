@@ -15,6 +15,7 @@ export const NavigationContent = ({
     <button
       className="group hover:bg-grey cursor-pointer rounded-lg p-1.5 duration-500 hover:opacity-70"
       onClick={() => setRenderDisconnectCard(true)}
+      title="Log out"
     >
       <LogOut className="text-grey group-hover:text-secondary size-5 duration-500" />
     </button>

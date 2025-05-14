@@ -13,6 +13,7 @@ export const ThemeTogglerButton = ({ className }: { className?: string }) => {
     <button
       onClick={handleThemeToggler}
       className={twMerge("w-fit cursor-pointer", className)}
+      title={isThemeLight ? "Set Dark" : "Set Light"}
     >
       <motion.div
         key={isThemeLight ? "light" : "dark"}

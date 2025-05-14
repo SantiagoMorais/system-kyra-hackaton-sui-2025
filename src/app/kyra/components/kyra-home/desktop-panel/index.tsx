@@ -1,6 +1,6 @@
 "use client";
 
-import { PanelLeftClose } from "lucide-react";
+import { PanelRightClose } from "lucide-react";
 import { useState } from "react";
 
 import { usePanelNavigator } from "@/contexts/panel-navigator-context/hooks";
@@ -25,10 +25,10 @@ export const DesktopPanel = () => {
     >
       <button
         onClick={handleOpenPanel}
-        title="Close Panel"
+        title={panelIsOpen ? "Close Panel" : "Open Panel"}
         className="text-grey hover:text-secondary hover:bg-dark-grey mb-2 w-fit rounded-md p-1 duration-300"
       >
-        <PanelLeftClose
+        <PanelRightClose
           className={`size-5 duration-500 ${panelIsOpen && "rotate-180"}`}
         />
       </button>
