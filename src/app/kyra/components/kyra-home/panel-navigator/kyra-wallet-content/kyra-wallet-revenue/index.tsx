@@ -9,7 +9,7 @@ import { WalletContent, walletWindows } from "@/utils/wallet-windows";
 
 export const KyraWalletBalance = () => {
   const [showBalance, setShowBalance] = useState<boolean>(false);
-  const [selected, setSelected] = useState<WalletContent>("1");
+  const [selected, setSelected] = useState<WalletContent>("Balance");
   const { account } = useWallet();
 
   const handleShowBalance = () => {
