@@ -1,9 +1,9 @@
 export const routes = {
   private: {
-    home: "/",
+    chat: "/chat",
   },
   public: {
     signIn: "/sign-in",
-    intro: "/kyra",
+    home: "/",
   },
 };

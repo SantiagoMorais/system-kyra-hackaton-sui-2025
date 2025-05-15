@@ -10,7 +10,7 @@ export const ConnectToTheWalletButton = () => {
 
   const onConnectSuccess = () => {
     document.cookie = `token=wallet-authenticated; path=/`;
-    redirect(routes.private.home);
+    redirect(routes.private.chat);
   };
 
   return (

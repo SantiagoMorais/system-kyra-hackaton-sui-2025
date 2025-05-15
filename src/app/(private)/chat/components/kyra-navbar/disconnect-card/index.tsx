@@ -11,7 +11,7 @@ export const DisconnectCard = ({
   const handleDisconnect = () => {
     disconnect();
     document.cookie = "token=; Max-Age=0; path=/";
-    redirect(routes.public.intro);
+    redirect(routes.public.home);
   };
 
   return (
