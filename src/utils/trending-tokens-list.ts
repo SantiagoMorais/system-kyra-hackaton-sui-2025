@@ -5,7 +5,7 @@ import polkadotIcon from "@/assets/icons/polkadot-icon.png";
 import xrpIcon from "@/assets/icons/xrp-icon.png";
 import { ITrendingTokensListProps } from "@/core/interfaces/trending-tokens-list-props";
 
-export const TrendingTokensList: Array<ITrendingTokensListProps> = [
+export const trendingTokensList: Array<ITrendingTokensListProps> = [
   {
     icon: bitcoinIcon,
     name: "Bitcoin",

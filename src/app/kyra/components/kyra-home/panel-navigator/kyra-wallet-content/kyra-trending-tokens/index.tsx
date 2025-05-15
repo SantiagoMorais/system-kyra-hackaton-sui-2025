@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { TrendingTokensList } from "@/utils/trending-tokens-list";
+import { trendingTokensList } from "@/utils/trending-tokens-list";
 
 export const KyraTrendingTokens = () => (
   <>
@@ -9,7 +9,7 @@ export const KyraTrendingTokens = () => (
       <p className="text-grey text-sm">Last 24h</p>
     </div>
     <ul className="mb-6 flex flex-col gap-2">
-      {TrendingTokensList.map((token, index) => (
+      {trendingTokensList.map((token, index) => (
         <li key={index} className="bg-dark-grey flex justify-between px-3 py-4">
           <div className="flex items-center gap-4">
             <Image
