@@ -1,19 +1,12 @@
 "use client";
 import { ConnectButton } from "@suiet/wallet-kit";
-import { useWallet } from "@suiet/wallet-kit";
 import { redirect } from "next/navigation";
-import { useEffect } from "react";
 
 import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
 import { routes } from "@/utils/routes";
 
 export const ConnectToTheWalletButton = () => {
-  const { status } = useWallet();
   const { isThemeLight } = useThemeToggler();
-
-  useEffect(() => {
-    if (status === "connected") redirect(routes.kyra);
-  }, [status]);
 
   return (
     <section className="text-secondary w-full cursor-pointer items-center border border-orange-600 uppercase duration-300 hover:opacity-50">
@@ -34,7 +27,7 @@ export const ConnectToTheWalletButton = () => {
           color: `${isThemeLight ? "black" : "white"}`,
         }}
         label="Connect to your wallet"
-        onConnectSuccess={() => redirect(routes.kyra)}
+        onConnectSuccess={() => redirect(routes.private.home)}
       />
     </section>
   );

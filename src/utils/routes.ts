@@ -1,5 +1,9 @@
 export const routes = {
-  home: "/",
-  login: "/login",
-  kyra: "/kyra",
+  private: {
+    home: "/",
+  },
+  public: {
+    signIn: "/sign-in",
+    intro: "/kyra",
+  },
 };

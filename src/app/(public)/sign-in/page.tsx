@@ -1,16 +1,16 @@
 import { ComponentsContainer } from "@/components/components-container";
 
-import { LoginBanner } from "./login-banner";
-import { LoginContent } from "./login-content";
+import { SignInBanner } from "./sign-in-banner";
+import { SignInContent } from "./sign-in-content";
 
-const Login = () => (
+const SingIn = () => (
   <ComponentsContainer>
     <section className="flex size-full min-h-dvh w-full max-w-(--breakpoint-2xl) items-center justify-center">
-      <LoginBanner />
+      <SignInBanner />
       <hr className="bg-grey/50 hidden min-h-dvh w-px md:block" />
-      <LoginContent />
+      <SignInContent />
     </section>
   </ComponentsContainer>
 );
 
-export default Login;
+export default SingIn;

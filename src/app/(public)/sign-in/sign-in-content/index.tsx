@@ -1,6 +1,6 @@
 import { ConnectToTheWalletButton } from "./connect-to-the-wallet-button";
 
-export const LoginContent = () => (
+export const SignInContent = () => (
   <section className="z-10 flex flex-col items-center gap-3 p-6 md:flex-1 md:px-10">
     <div className="bg-dark-grey flex max-w-120 flex-col items-center gap-3 rounded-md p-6 md:bg-transparent md:p-0">
       <h2 className="font-redonda text-center text-[40px] leading-13 font-normal text-orange-600">
