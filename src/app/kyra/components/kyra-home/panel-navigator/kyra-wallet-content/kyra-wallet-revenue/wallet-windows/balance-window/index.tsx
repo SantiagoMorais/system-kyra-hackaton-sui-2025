@@ -1,21 +1,41 @@
 "use client";
+import { getFullnodeUrl, SuiClient } from "@mysten/sui/client";
 import { useWallet } from "@suiet/wallet-kit";
 import { AnimatePresence, motion } from "framer-motion";
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const suiClient = new SuiClient({ url: getFullnodeUrl("mainnet") });
 
 export const BalanceWindow = () => {
   const { account } = useWallet();
   const [showBalance, setShowBalance] = useState<boolean>(false);
+  const [balance, setBalance] = useState<number | null>(null);
 
   const handleShowBalance = () => {
     setShowBalance((prev) => !prev);
   };
 
+  useEffect(() => {
+    const fetchBalance = async () => {
+      if (!account?.address) return;
+      const result = await suiClient.getBalance({
+        owner: account.address,
+      });
+
+      setBalance(Number(result.totalBalance) / 1e9);
+    };
+
+    fetchBalance();
+  }, [account?.address]);
+
   return (
     <>
       <div className="flex w-full items-center justify-between px-4">
-        <p className="text-grey ml-auto flex-1 truncate p-1 duration-300 hover:opacity-70">
+        <p
+          className="text-grey ml-auto flex-1 cursor-default truncate p-1 duration-300 select-none hover:opacity-70"
+          title={account?.address}
+        >
           {account?.address}
         </p>
         <div className="flex flex-1 justify-end">
@@ -41,9 +61,12 @@ export const BalanceWindow = () => {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="font-redonda text-secondary/70 absolute truncate text-center text-4xl"
+              className="font-redonda text-secondary/70 absolute cursor-default truncate text-center text-4xl"
+              title={`${balance?.toFixed(4) ?? ""}`}
             >
-              $ 474.988,76
+              {balance !== null
+                ? `${balance.toFixed(4)} SUI`
+                : "Loading balance..."}
             </motion.p>
           ) : (
             <motion.p
@@ -54,7 +77,7 @@ export const BalanceWindow = () => {
               transition={{ duration: 0.3 }}
               className="font-redonda text-secondary/70 absolute truncate text-center text-4xl"
             >
-              $ .....
+              ..... SUI
             </motion.p>
           )}
         </AnimatePresence>
