@@ -8,6 +8,11 @@ import { routes } from "@/utils/routes";
 export const ConnectToTheWalletButton = () => {
   const { isThemeLight } = useThemeToggler();
 
+  const onConnectSuccess = () => {
+    document.cookie = `token=wallet-authenticated; path=/`;
+    redirect(routes.private.home);
+  };
+
   return (
     <section className="text-secondary w-full cursor-pointer items-center border border-orange-600 uppercase duration-300 hover:opacity-50">
       <ConnectButton
@@ -27,7 +32,7 @@ export const ConnectToTheWalletButton = () => {
           color: `${isThemeLight ? "black" : "white"}`,
         }}
         label="Connect to your wallet"
-        onConnectSuccess={() => redirect(routes.private.home)}
+        onConnectSuccess={onConnectSuccess}
       />
     </section>
   );

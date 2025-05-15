@@ -25,7 +25,7 @@ export const TextArea = ({
     });
 
   const onSubmit = (data: TKyraTextArea) => {
-    if (status === "disconnected") redirect(routes.login);
+    if (status === "disconnected") redirect(routes.public.signIn);
     console.log(data);
     reset();
   };
