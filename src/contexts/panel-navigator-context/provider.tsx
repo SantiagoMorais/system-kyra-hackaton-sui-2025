@@ -9,7 +9,7 @@ import { PanelOptions } from "./interfaces";
 export const PanelNavigatorProvider = ({
   children,
 }: React.PropsWithChildren) => {
-  const [panel, setPanel] = useState<"wallet" | "discover" | "calendar">(
+  const [panel, setPanel] = useState<"wallet" | "discover" | "reminders">(
     "wallet"
   );
   const [panelOpened, setPanelOpenned] = useState<boolean>(false);
