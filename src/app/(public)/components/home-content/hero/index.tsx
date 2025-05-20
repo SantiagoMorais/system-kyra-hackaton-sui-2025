@@ -7,7 +7,7 @@ import { routes } from "@/utils/routes";
 
 export const Hero = () => (
   <section className="w-full">
-    <div className="bg-dark-grey flex max-h-167 w-full flex-col items-center justify-center gap-6 py-10 md:h-[50dvw] md:gap-8 md:py-8">
+    <div className="bg-dark-grey flex max-h-167 w-full flex-col items-center justify-center gap-6 p-6 py-10 md:h-[50dvw] md:gap-8 md:p-10">
       <motion.h2
         key="hero-title"
         initial={{ x: 30, opacity: 0 }}

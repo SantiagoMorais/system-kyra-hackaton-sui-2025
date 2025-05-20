@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import kyraImage from "@/assets/imgs/kyra-about-image.webp";
 import { buttonStyle } from "@/styles/button-style";
+import { subtitleStyle } from "@/styles/subtitle-style";
 import { routes } from "@/utils/routes";
 
 export const About = () => (
@@ -14,11 +15,17 @@ export const About = () => (
         className="h-full object-cover select-none"
       />
     </div>
-    <article className="flex flex-1 flex-col gap-8 md:gap-15">
+    <article className="flex flex-1 flex-col items-center gap-8 md:items-start md:gap-15">
       <div className="space-y-5">
-        <p className="text-secondary text-sm uppercase">About</p>
-        <h2 className="text-4xl text-orange-600 md:text-5xl">What is Kyra?</h2>
-        <p className="text-secondary font-redonda text-xl leading-8">
+        <p className="text-secondary text-center text-sm uppercase md:text-start">
+          About
+        </p>
+        <h2
+          className={subtitleStyle({ className: "text-center md:text-start" })}
+        >
+          What is Kyra?
+        </h2>
+        <p className="text-secondary font-redonda text-center text-xl leading-8 md:text-start">
           Kyra is an artificial intelligence agent designed to operate directly
           within the decentralized finance ecosystem. It was created to simplify
           the use of DeFi protocols, allowing anyone — even without technical
