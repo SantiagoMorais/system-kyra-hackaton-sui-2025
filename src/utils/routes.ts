@@ -3,7 +3,8 @@ export const routes = {
     chat: "/chat",
   },
   public: {
-    signIn: "/sign-in",
     home: "/",
+    signIn: "/sign-in",
+    welcome: "/welcome",
   },
 };

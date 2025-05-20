@@ -1,8 +1,11 @@
 import { MiddlewareConfig, NextRequest, NextResponse } from "next/server";
 
+import { routes } from "./utils/routes";
+
 const publicRoutes = [
-  { path: "/sign-in", whenAuthenticated: "redirect" },
-  { path: "/", whenAuthenticated: "redirect" },
+  { path: routes.public.signIn, whenAuthenticated: "redirect" },
+  { path: routes.public.welcome, whenAuthenticated: "redirect" },
+  { path: routes.public.home, whenAuthenticated: "stay" },
 ] as const;
 
 const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = "/sign-in";

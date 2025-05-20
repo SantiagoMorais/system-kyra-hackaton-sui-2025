@@ -1,13 +1,15 @@
 import { ComponentsContainer } from "@/components/components-container";
 
-import { ConnectButton } from "../components/connect-button";
-import { KyraChat } from "../components/kyra-chat";
+import { DashboardHeader } from "./components/dashboard-header";
+import { Hero } from "./components/hero";
 
-const Home = () => (
-  <ComponentsContainer className="min-h-dvh flex-col lg:flex-row">
-    <ConnectButton />
-    <KyraChat />
+const Dashboard = () => (
+  <ComponentsContainer className="flex-col items-center">
+    <DashboardHeader />
+    <main className="h-full flex-1">
+      <Hero />
+    </main>
   </ComponentsContainer>
 );
 
-export default Home;
+export default Dashboard;
