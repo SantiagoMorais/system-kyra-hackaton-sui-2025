@@ -1,4 +1,5 @@
 import { About } from "./about";
+import { Benefits } from "./benefits";
 import { Hero } from "./hero";
 import { Samples } from "./samples";
 import { Testimonials } from "./testimonials";
@@ -9,5 +10,6 @@ export const HomeContent = () => (
     <About />
     <Samples />
     <Testimonials />
+    <Benefits />
   </main>
 );
