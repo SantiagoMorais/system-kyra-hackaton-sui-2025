@@ -10,4 +10,4 @@ const Kyra = () => (
   </ComponentsContainer>
 );
 
-export default Kyra; 
+export default Kyra;
