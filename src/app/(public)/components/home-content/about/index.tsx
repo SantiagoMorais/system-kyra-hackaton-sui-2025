@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import kyraImage from "@/assets/imgs/kyra-about-image.webp";
 import { buttonStyle } from "@/styles/button-style";
+import { routes } from "@/utils/routes";
 
 export const About = () => (
   <section className="flex w-full flex-col gap-6 overflow-x-hidden pb-10 md:flex-row-reverse md:gap-15">
@@ -24,7 +26,9 @@ export const About = () => (
           retaking, swaps, and position composition with security and autonomy.
         </p>
       </div>
-      <button className={buttonStyle()}>Try Kyra</button>
+      <Link href={routes.public.welcome} className={buttonStyle()}>
+        Try Kyra
+      </Link>
     </article>
   </section>
 );
