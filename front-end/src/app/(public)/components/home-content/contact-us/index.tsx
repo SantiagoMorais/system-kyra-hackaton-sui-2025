@@ -3,7 +3,7 @@ import { subtitleStyle } from "@/styles/subtitle-style";
 import { ContactDetails } from "./contact-details";
 
 export const ContactUs = () => (
-  <section className="space-y-10 md:space-y-20">
+  <section className="w-full space-y-10 md:space-y-20">
     <article className="flex flex-col items-center gap-6">
       <p className="text-secondary text-center text-sm uppercase">
         Get in Touch

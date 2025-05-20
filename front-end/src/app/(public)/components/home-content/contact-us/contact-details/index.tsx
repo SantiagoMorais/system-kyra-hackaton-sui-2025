@@ -4,7 +4,7 @@ import { buttonStyle } from "@/styles/button-style";
 import { contactDetails, contactIcons } from "@/utils/contact-details";
 
 export const ContactDetails = () => (
-  <section className="border-grey space-y-10 border p-5 md:grid md:grid-cols-2 md:gap-10 md:p-18">
+  <section className="border-grey min-w-full space-y-10 border p-5 md:grid md:grid-cols-2 md:gap-10 md:p-18">
     <div className="flex h-full flex-col">
       <h3 className="text-secondary font-redonda mb-8 text-2xl font-bold md:mb-10 md:text-3xl">
         Contact Details:
@@ -61,6 +61,7 @@ export const ContactDetails = () => (
           className={buttonStyle({
             className: "mt-10 w-full bg-orange-500 hover:bg-orange-600",
           })}
+          type="button"
         >
           Send Message
         </button>
