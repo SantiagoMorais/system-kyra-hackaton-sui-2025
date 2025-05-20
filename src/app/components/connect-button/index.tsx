@@ -1,11 +1,17 @@
 import { Info } from "lucide-react";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 import { ThemeTogglerButton } from "@/components/theme-toggler-button";
 import { routes } from "@/utils/routes";
 
-export const ConnectButton = () => (
-  <section className="flex w-full items-center justify-end gap-4 p-4 pb-0 lg:fixed lg:top-5 lg:right-5 lg:w-fit lg:p-0">
+export const ConnectButton = ({ className }: { className?: string }) => (
+  <section
+    className={twMerge(
+      "flex w-full items-center justify-end gap-4 p-4 pb-0 lg:fixed lg:top-5 lg:right-5 lg:w-fit lg:p-0",
+      className
+    )}
+  >
     <ThemeTogglerButton />
     <Link
       href={routes.public.signIn}
