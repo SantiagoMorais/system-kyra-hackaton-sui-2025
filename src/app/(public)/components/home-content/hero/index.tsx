@@ -1,7 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import { buttonStyle } from "@/styles/button-style";
+import { routes } from "@/utils/routes";
 
 export const Hero = () => (
   <section className="w-full">
@@ -32,7 +34,7 @@ export const Hero = () => (
         transition={{ duration: 0.5, delay: 0.6 }}
         className={buttonStyle()}
       >
-        Get Started
+        <Link href={routes.public.welcome}>Get Started</Link>
       </motion.button>
     </div>
   </section>
