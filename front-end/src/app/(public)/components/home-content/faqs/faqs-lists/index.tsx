@@ -34,7 +34,7 @@ export const FAQsList = () => {
           </div>
           <Collapse isOpened={faqSelected === question}>
             <div
-              className={`via-grey from-grey duration-300 ${faqSelected === question ? "opacity-100" : "opacity-0"} mb-5 h-px w-full bg-linear-to-r to-transparent text-transparent`}
+              className={`via-grey from-grey duration-300 ${faqSelected === question ? "opacity-100" : "opacity-0"} mb-5 h-0.5 w-full bg-linear-to-r to-transparent text-transparent`}
             />
             <p className="text-secondary/60 text-start leading-8">{answer}</p>
           </Collapse>
