@@ -9,7 +9,7 @@ export const KyraRemindersContent = () => (
     <ul className="grid grid-cols-1 gap-3">
       {orderedRemindersList.map(({ balance, date }, index) => (
         <li
-          key={index}
+          key={`reminder-${index}`}
           className="hover:bg-dark-grey/50 bg-dark-grey flex justify-between p-3 duration-300 select-none"
         >
           <p className="text-light-grey text-sm font-medium uppercase">

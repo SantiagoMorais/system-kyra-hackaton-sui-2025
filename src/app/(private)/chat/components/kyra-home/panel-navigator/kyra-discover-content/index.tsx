@@ -6,7 +6,7 @@ export const KyraDiscoverContent = () => (
   <section className="flex h-full flex-col space-y-9 pb-4">
     <ul className="space-y-9">
       {kyraDiscoverNewsData.map(({ banner, title }, index) => (
-        <li key={index} className="relative h-45 w-full">
+        <li key={`new-data-${index}`} className="relative h-45 w-full">
           <Image src={banner} alt="News banner" fill className="object-cover" />
           <div className="absolute bottom-0 left-0 flex h-20 w-full flex-col justify-between p-2.5 py-1 backdrop-blur-lg">
             <p className="text-secondary relative z-20 text-sm uppercase">

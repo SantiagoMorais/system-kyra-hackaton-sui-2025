@@ -10,7 +10,10 @@ export const KyraTrendingTokens = () => (
     </div>
     <ul className="mb-6 flex flex-col gap-2">
       {trendingTokensList.map((token, index) => (
-        <li key={index} className="bg-dark-grey flex justify-between px-3 py-4">
+        <li
+          key={`trending-token-${index}`}
+          className="bg-dark-grey flex justify-between px-3 py-4"
+        >
           <div className="flex items-center gap-4">
             <Image
               src={token.icon}
