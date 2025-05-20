@@ -1,5 +1,6 @@
 import { About } from "./about";
 import { Benefits } from "./benefits";
+import { ContactUs } from "./contact-us";
 import { FAQs } from "./faqs";
 import { Hero } from "./hero";
 import { Samples } from "./samples";
@@ -13,5 +14,6 @@ export const HomeContent = () => (
     <Testimonials />
     <Benefits />
     <FAQs />
+    <ContactUs />
   </main>
 );
