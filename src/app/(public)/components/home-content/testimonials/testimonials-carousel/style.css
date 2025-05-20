@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.swiper {
+  @apply pb-10;
+}
+
+.swiper-slide {
+  @apply h-auto;
+}
+
+.swiper-slide > div {
+  @apply h-full;
+}
+
+.swiper-pagination {
+  @apply absolute bottom-0 w-full;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-orange-600;
+}

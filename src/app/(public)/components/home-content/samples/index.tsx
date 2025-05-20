@@ -4,7 +4,7 @@ import { SamplesCards } from "./samples-cards";
 
 export const Samples = () => (
   <section className="flex flex-1 flex-col gap-8 md:gap-15">
-    <div className="flex flex-col items-center gap-6">
+    <article className="flex flex-col items-center gap-6">
       <p className="text-secondary text-center text-sm uppercase">
         Our samples
       </p>
@@ -18,7 +18,7 @@ export const Samples = () => (
         understands your profile, your assets, and suggests intelligent
         investment routes.
       </p>
-    </div>
+    </article>
     <SamplesCards />
   </section>
 );
