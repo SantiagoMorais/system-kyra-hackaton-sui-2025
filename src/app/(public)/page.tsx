@@ -1,15 +1,13 @@
 import { ComponentsContainer } from "@/components/components-container";
 
-import { DashboardHeader } from "./components/dashboard-header";
-import { Hero } from "./components/hero";
+import { HomeContent } from "./components/home-content";
+import { HomeHeader } from "./components/home-header";
 
-const Dashboard = () => (
-  <ComponentsContainer className="flex-col items-center">
-    <DashboardHeader />
-    <main className="h-full flex-1">
-      <Hero />
-    </main>
+const Home = () => (
+  <ComponentsContainer className="flex-col items-center px-10 lg:px-25">
+    <HomeHeader />
+    <HomeContent />
   </ComponentsContainer>
 );
 
-export default Dashboard;
+export default Home;

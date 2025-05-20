@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 
 export const Hero = () => (
-  <section className="w-screen max-w-(--breakpoint-2xl) px-4">
-    <div className="bg-dark-grey flex max-h-167 w-full flex-col items-center justify-center gap-6 p-4 py-10 md:h-[50dvw] md:gap-8 md:py-8">
+  <section className="w-full max-w-(--breakpoint-2xl)">
+    <div className="bg-dark-grey flex max-h-167 w-full flex-col items-center justify-center gap-6 py-10 md:h-[50dvw] md:gap-8 md:py-8">
       <motion.h2
         key="hero-title"
         initial={{ x: 30, opacity: 0 }}
