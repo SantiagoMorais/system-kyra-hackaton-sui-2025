@@ -6,7 +6,7 @@ import { buttonStyle } from "@/styles/button-style";
 import { routes } from "@/utils/routes";
 
 export const About = () => (
-  <section className="flex w-full flex-col gap-6 overflow-x-hidden pb-10 md:flex-row-reverse md:gap-15">
+  <section className="flex w-full max-w-full flex-col gap-6 md:flex-row-reverse md:gap-15">
     <div className="relative max-h-150 min-h-full flex-1">
       <Image
         src={kyraImage}
@@ -14,7 +14,7 @@ export const About = () => (
         className="h-full object-cover select-none"
       />
     </div>
-    <article className="flex-1 space-y-8 md:space-y-15">
+    <article className="flex flex-1 flex-col gap-8 md:gap-15">
       <div className="space-y-5">
         <p className="text-secondary text-sm uppercase">About</p>
         <h2 className="text-4xl text-orange-600 md:text-5xl">What is Kyra?</h2>
@@ -26,7 +26,10 @@ export const About = () => (
           retaking, swaps, and position composition with security and autonomy.
         </p>
       </div>
-      <Link href={routes.public.welcome} className={buttonStyle()}>
+      <Link
+        href={routes.public.welcome}
+        className={buttonStyle({ className: "w-fit" })}
+      >
         Try Kyra
       </Link>
     </article>
