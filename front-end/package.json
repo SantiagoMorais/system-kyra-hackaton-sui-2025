@@ -17,6 +17,7 @@
     "@hookform/resolvers": "^5.0.1",
     "@mysten/sui": "^1.29.1",
     "@suiet/wallet-kit": "^0.4.1",
+    "@supabase/supabase-js": "^2.49.8",
     "framer-motion": "^12.10.0",
     "lucide": "^0.507.0",
     "lucide-react": "^0.507.0",
