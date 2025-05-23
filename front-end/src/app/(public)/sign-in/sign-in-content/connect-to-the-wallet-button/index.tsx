@@ -1,17 +1,22 @@
 "use client";
-import { ConnectButton } from "@suiet/wallet-kit";
-import { redirect } from "next/navigation";
+import { ConnectButton, useWallet } from "@suiet/wallet-kit";
 
 import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
-import { routes } from "@/utils/routes";
+import { useEffect } from "react";
 
-export const ConnectToTheWalletButton = () => {
+export const ConnectToTheWalletButton = ({
+  onConnectSuccess,
+}: {
+  onConnectSuccess: (walletAddress: string) => void;
+}) => {
+  const { account } = useWallet();
   const { isThemeLight } = useThemeToggler();
 
-  const onConnectSuccess = () => {
-    document.cookie = `token=wallet-authenticated; path=/`;
-    redirect(routes.private.chat);
-  };
+  useEffect(() => {
+    if (account && account.address) {
+      onConnectSuccess(account.address);
+    }
+  }, [account]);
 
   return (
     <section className="text-secondary w-full cursor-pointer items-center border border-orange-600 uppercase duration-300 hover:opacity-50">

@@ -1,52 +1,19 @@
-import { MiddlewareConfig, NextRequest, NextResponse } from "next/server";
+import { type NextRequest } from 'next/server'
+import { updateSession } from '@/utils/supabase/middleware'
 
-import { routes } from "./utils/routes";
-
-const publicRoutes = [
-  { path: routes.public.signIn, whenAuthenticated: "redirect" },
-  { path: routes.public.welcome, whenAuthenticated: "redirect" },
-  { path: routes.public.home, whenAuthenticated: "stay" },
-] as const;
-
-const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = "/sign-in";
-
-export function middleware(request: NextRequest) {
-  const path = request.nextUrl.pathname;
-  const publicRoute = publicRoutes.find((route) => route.path === path);
-  const authToken = request.cookies.get("token");
-
-  if (!authToken && publicRoute) return NextResponse.next();
-
-  if (!authToken && !publicRoute) {
-    const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE;
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  if (
-    authToken &&
-    publicRoute &&
-    publicRoute.whenAuthenticated === "redirect"
-  ) {
-    const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = "/chat";
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  if (authToken && !publicRoute) return NextResponse.next();
-
-  return NextResponse.next();
+export async function middleware(request: NextRequest) {
+  return await updateSession(request)
 }
 
-export const config: MiddlewareConfig = {
+export const config = {
   matcher: [
     /*
      * Match all request paths except for the ones starting with:
-     * - api (API routes)
      * - _next/static (static files)
      * - _next/image (image optimization files)
-     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
+     * - favicon.ico (favicon file)
+     * Feel free to modify this pattern to include more paths.
      */
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
-};
+}
