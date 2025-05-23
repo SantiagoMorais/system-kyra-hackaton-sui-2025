@@ -4,14 +4,15 @@ import { redirect } from "next/navigation";
 import { IDisconnectCardProps } from "@/core/interfaces/disconnect-card-props";
 import { routes } from "@/utils/routes";
 
+import { logout } from "@/app/login/actions"
+
 export const DisconnectCard = ({
   disconnect,
   setRenderDisconnectCard,
 }: IDisconnectCardProps) => {
   const handleDisconnect = () => {
     disconnect();
-    document.cookie = "token=; Max-Age=0; path=/";
-    redirect(routes.public.home);
+    logout();
   };
 
   return (

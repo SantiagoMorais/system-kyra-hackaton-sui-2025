@@ -47,12 +47,11 @@ export const SignInContent = () => {
             Privacy Policy.
           </a>
         </p>
-        <ConnectToTheWalletButton onConnectSuccess={handleSignIn} />
         {
           hasAccount !== null ? hasAccount === true ?
             <SignInForm /> :
             <CreateAccoutForm /> :
-            <></>
+            <ConnectToTheWalletButton onConnectSuccess={handleSignIn} />
         }
       </div>
     </section>

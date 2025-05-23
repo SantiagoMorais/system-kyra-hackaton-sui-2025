@@ -13,7 +13,7 @@ export const ConnectToTheWalletButton = ({
   const { isThemeLight } = useThemeToggler();
 
   useEffect(() => {
-    if (account) {
+    if (account && account.address) {
       onConnectSuccess(account.address);
     }
   }, [account]);
