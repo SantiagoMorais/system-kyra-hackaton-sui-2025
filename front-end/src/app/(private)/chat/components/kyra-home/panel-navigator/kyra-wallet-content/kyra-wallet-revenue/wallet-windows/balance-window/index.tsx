@@ -1,11 +1,10 @@
 "use client";
-import { getFullnodeUrl, SuiClient } from "@mysten/sui/client";
 import { useWallet } from "@suiet/wallet-kit";
 import { AnimatePresence, motion } from "framer-motion";
 import { Eye, EyeOff } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const suiClient = new SuiClient({ url: getFullnodeUrl("mainnet") });
+import { suiClient } from "@/lib/sui/suiClient";
 
 export const BalanceWindow = () => {
   const { account } = useWallet();
@@ -18,7 +17,7 @@ export const BalanceWindow = () => {
 
   useEffect(() => {
     const fetchBalance = async () => {
-      if (!account?.address) return;
+      if (!account) return;
       const result = await suiClient.getBalance({
         owner: account.address,
       });
@@ -27,7 +26,7 @@ export const BalanceWindow = () => {
     };
 
     fetchBalance();
-  }, [account?.address]);
+  }, [account]);
 
   return (
     <>

@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/lib/supabase/server'
 
 export async function login({ wallet_address, password }: { wallet_address: string, password: string }) {
   const supabase = await createClient()
