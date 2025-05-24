@@ -14,11 +14,7 @@ export const registerUser = async (walletAddress: string, password: string) => {
       password: password,
     });
     return response.data;
-  } catch (error: any) {
-    console.error(
-      "Error registering user:",
-      error.response?.data || error.message
-    );
+  } catch (error: unknown ) {
     throw error;
   }
 };
