@@ -1,10 +1,9 @@
 import { X } from "lucide-react";
 import { redirect } from "next/navigation";
 
+import { logout } from "@/app/login/actions";
 import { IDisconnectCardProps } from "@/core/interfaces/disconnect-card-props";
 import { routes } from "@/utils/routes";
-
-import { logout } from "@/app/login/actions"
 
 export const DisconnectCard = ({
   disconnect,

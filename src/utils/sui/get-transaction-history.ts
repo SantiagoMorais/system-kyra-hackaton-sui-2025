@@ -1,7 +1,6 @@
 import { suiClient } from "@/lib/sui/suiClient";
 
 export const getTransactionHistory = async (address: string) => {
-
   // Consultar transações enviadas
   const sentTransactions = await suiClient.queryTransactionBlocks({
     filter: { FromAddress: address },
@@ -27,10 +26,7 @@ export const getTransactionHistory = async (address: string) => {
   });
 
   // Combinar e ordenar transações por timestamp
-  const transactions = [
-    ...sentTransactions.data,
-    ...receivedTransactions.data,
-  ];
+  const transactions = [...sentTransactions.data, ...receivedTransactions.data];
 
   return transactions;
-}
+};

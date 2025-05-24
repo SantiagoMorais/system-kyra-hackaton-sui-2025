@@ -1,7 +1,7 @@
-import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase/server'
+import { redirect } from "next/navigation";
 
 import { ComponentsContainer } from "@/components/components-container";
+import { createClient } from "@/lib/supabase/server";
 
 import { KyraHome } from "./components/kyra-home";
 import { KyraNavbar } from "./components/kyra-navbar";
@@ -9,9 +9,9 @@ import { KyraNavbar } from "./components/kyra-navbar";
 const Kyra = async () => {
   const supabase = await createClient();
 
-  const { data, error } = await supabase.auth.getUser()
+  const { data, error } = await supabase.auth.getUser();
   if (error || !data?.user) {
-    redirect('/sign-in')
+    redirect("/sign-in");
   }
 
   return (
@@ -20,6 +20,6 @@ const Kyra = async () => {
       <KyraHome />
     </ComponentsContainer>
   );
-}
+};
 
 export default Kyra;
