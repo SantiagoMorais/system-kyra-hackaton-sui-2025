@@ -22,6 +22,8 @@ export const buildMoveStakingCall = async ({
     coinType: SUI_COIN_TYPE,
   });
 
+  console.log(amount);
+
   if (!coins.data.length) throw new Error("Sender do not have any SUI coins");
 
   const coinObjectId = coins.data[0].coinObjectId;

@@ -50,8 +50,6 @@ export const HistoryWindow = () => {
 const TransactionItem = ({ tx }: { tx: SuiTransactionBlockResponse }) => {
   const wallet = useWallet();
   const { isThemeLight } = useThemeToggler();
-  const sender = tx.transaction?.data.sender;
-  const status = tx.effects?.status.status;
 
   const timestamp = tx.timestampMs
     ? new Date(Number(tx.timestampMs)).toLocaleString("pt-BR", {
@@ -81,7 +79,7 @@ const TransactionItem = ({ tx }: { tx: SuiTransactionBlockResponse }) => {
     const programmableTx = tx.transaction?.data.transaction;
 
     const hasTransferToAnotherWallet = programmableTx?.transactions?.some(
-      (cmd: any) => {
+      (cmd: unknown ) => {
         if (Array.isArray(cmd) && cmd[0] === "TransferObjects") {
           const recipientRaw = cmd[2];
 

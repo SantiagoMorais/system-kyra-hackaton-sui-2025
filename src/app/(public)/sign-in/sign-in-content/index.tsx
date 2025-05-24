@@ -14,12 +14,8 @@ export const SignInContent = () => {
     try {
       await fetchUserByWalletAddress(walletAddress);
       setHasAccount(true);
-    } catch (error: any) {
-      if (error.response?.status === 404) {
-        setHasAccount(false);
-      } else {
-        console.log("Error fetching user by wallet address:", error);
-      }
+    } catch (error: unknown ) {
+      setHasAccount(false);
     }
   };
 
