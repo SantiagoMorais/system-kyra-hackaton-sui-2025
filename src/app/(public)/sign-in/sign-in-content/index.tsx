@@ -14,7 +14,8 @@ export const SignInContent = () => {
     try {
       await fetchUserByWalletAddress(walletAddress);
       setHasAccount(true);
-    } catch (error: unknown ) {
+    } catch (error: unknown) {
+      console.log(error);
       setHasAccount(false);
     }
   };
