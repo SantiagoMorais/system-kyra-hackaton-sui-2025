@@ -1,13 +1,11 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image";
 import { useWallet } from "@suiet/wallet-kit";
-
-import { buildMoveStakingCall } from "@/utils/sui/build-move-staking-call";
-
-import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
+import Image from "next/image";
+import { useState } from "react";
 
 import p2pIcon from "@/assets/icons/p2p-icon.png";
+import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
+import { buildMoveStakingCall } from "@/utils/sui/build-move-staking-call";
 
 export const StakingWindow = () => {
   const wallet = useWallet();
@@ -22,7 +20,10 @@ export const StakingWindow = () => {
 
     setIsSending(true);
 
-    const reset = () => { setAmount(""); setIsSending(false); }
+    const reset = () => {
+      setAmount("");
+      setIsSending(false);
+    };
 
     try {
       if (!wallet.account) return;
@@ -42,22 +43,19 @@ export const StakingWindow = () => {
       console.log(error);
       reset();
     }
-  }
+  };
 
   return (
     <>
-      <div className="flex flex-col mt-2">
-        <span
-          className={`text-2xl ${isThemeLight ? '' : 'text-white'}`}
-        >
+      <div className="mt-2 flex flex-col">
+        <span className={`text-2xl ${isThemeLight ? "" : "text-white"}`}>
           Stake SUI
         </span>
-      </div >
-      <div className="relative flex w-full flex-1 flex-col items-center justify-center mt-2">
-
-        <div className="flex flex-col justify-center items-center gap-6">
+      </div>
+      <div className="relative mt-2 flex w-full flex-1 flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-6">
           <div
-            className={`flex justify-around items-center w-full text-2xl rounded-lg bg-neutral-200 ${isThemeLight ? '' : 'text-white'}`}
+            className={`flex w-full items-center justify-around rounded-lg bg-neutral-200 text-2xl ${isThemeLight ? "" : "text-white"}`}
           >
             <div className="ml-4">
               <Image
@@ -69,7 +67,7 @@ export const StakingWindow = () => {
               />
             </div>
             <span
-              className={`text-sm text-left px-4 ${isThemeLight ? '' : 'text-black'}`}
+              className={`px-4 text-left text-sm ${isThemeLight ? "" : "text-black"}`}
             >
               P2P.ORG
             </span>
@@ -81,15 +79,15 @@ export const StakingWindow = () => {
             value={amount}
             step={1}
             onChange={(e) => setAmount(e.target.value)}
-            className="w-full rounded-lg bg-neutral-200 px-4 h-8 text-sm"
+            className="h-8 w-full rounded-lg bg-neutral-200 px-4 text-sm"
           />
 
           <button
             onClick={handleTransfer}
             disabled={isSending}
-            className="w-full boder rounded-lg bg-neutral-200 px-4 py-2 hover:bg-neutral-400"
+            className="boder w-full rounded-lg bg-neutral-200 px-4 py-2 hover:bg-neutral-400"
           >
-            {isSending ? 'Processing...' : 'Confirm'}
+            {isSending ? "Processing..." : "Confirm"}
           </button>
         </div>
       </div>

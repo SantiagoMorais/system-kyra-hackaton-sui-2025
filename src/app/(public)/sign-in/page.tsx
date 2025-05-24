@@ -12,7 +12,7 @@ const SingIn = () => {
         <SignInContent />
       </section>
     </ComponentsContainer>
-  )
+  );
 };
 
 export default SingIn;

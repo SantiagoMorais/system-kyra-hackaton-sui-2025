@@ -1,8 +1,8 @@
 "use client";
 import { ConnectButton, useWallet } from "@suiet/wallet-kit";
+import { useEffect } from "react";
 
 import { useThemeToggler } from "@/contexts/theme-toggler-context/hooks";
-import { useEffect } from "react";
 
 export const ConnectToTheWalletButton = ({
   onConnectSuccess,

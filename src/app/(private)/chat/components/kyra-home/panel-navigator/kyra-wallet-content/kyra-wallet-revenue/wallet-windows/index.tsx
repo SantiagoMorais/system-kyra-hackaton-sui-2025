@@ -5,7 +5,7 @@ import { WalletContent } from "@/utils/wallet-windows";
 import { BalanceWindow } from "./balance-window";
 import { HistoryWindow } from "./history-window";
 import { SendWindow } from "./send-window";
-import { StakingWindow } from './staking-window';
+import { StakingWindow } from "./staking-window";
 
 export const WalletWindows = ({
   window,

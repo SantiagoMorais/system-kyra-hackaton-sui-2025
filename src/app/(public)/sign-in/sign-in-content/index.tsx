@@ -18,7 +18,7 @@ export const SignInContent = () => {
       if (error.response?.status === 404) {
         setHasAccount(false);
       } else {
-        console.log('Error fetching user by wallet address:', error);
+        console.log("Error fetching user by wallet address:", error);
       }
     }
   };
@@ -47,13 +47,16 @@ export const SignInContent = () => {
             Privacy Policy.
           </a>
         </p>
-        {
-          hasAccount !== null ? hasAccount === true ?
-            <SignInForm /> :
-            <CreateAccoutForm /> :
-            <ConnectToTheWalletButton onConnectSuccess={handleSignIn} />
-        }
+        {hasAccount !== null ? (
+          hasAccount === true ? (
+            <SignInForm />
+          ) : (
+            <CreateAccoutForm />
+          )
+        ) : (
+          <ConnectToTheWalletButton onConnectSuccess={handleSignIn} />
+        )}
       </div>
     </section>
   );
-}
+};
