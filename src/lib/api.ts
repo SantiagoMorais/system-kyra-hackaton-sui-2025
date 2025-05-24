@@ -14,7 +14,7 @@ export const registerUser = async (walletAddress: string, password: string) => {
       password: password,
     });
     return response.data;
-  } catch (error: unknown ) {
+  } catch (error: unknown) {
     throw error;
   }
 };
